@@ -164,5 +164,60 @@ let valorFinal = (valorQuePaga) - (novoValor);
 
 console.log(valorFinal); //280 quilowatt com 15% desconto vai para 11.9
 */
-// ps so fiz ate a parte 2 do desafio porque nao tenho tempo de terminar,
-//vou ter que enviar a atividade, mas vou fazer ele depois e reeviar.
+
+//parte --- 3 ---
+/*
+//a) Procure uma forma de converter libra (lb) para quilograma (kg) 
+// e escreva um programa que converta 20lb para kg. Imprima  a resposta
+// no console da seguinte forma: 
+let libra = 1;
+let kg = 0.4535;
+let conversor = libra * kg * 20;
+console.log(`20lb equivalem a ${conversor}kg`);
+
+//b) Procure uma forma de converter onça (oz) para quilograma (kg) 
+//e escreva um programa que converta 10.5oz para kg. Imprima  a resposta
+// no console da seguinte forma: 
+let oz = 1;
+kg = 0.02834;
+conversor = oz * kg * 10.5;
+console.log(`10.5oz equivalem a ${conversor}`);
+
+//c) Procure uma forma de converter milha (mi) para metro (m) e escreva
+// um programa que converta 100mi para m. Imprima  a  resposta no console da seguinte forma:
+let milha = 1;
+let metro = 1609.34; 
+conversor = milha * metro * 100;
+console.log(`100mi equivalem a ${conversor}m`);
+
+//d) Procure uma forma de converter pés (ft) para metro (m) e escreva
+//um programa que converta 50ft para m. Imprima  a resposta no console da seguinte forma: 
+let pes = 1;
+metro = 0.3048;
+conversor = pes * metro * 50;
+console.log(`50ft equivalem a ${conversor}m`);
+
+//e) Procure uma forma de converter galão (gal) para litro (l) e escreva
+//um programa que converta 103.56gal para litro. Imprima  a resposta no 
+//console da seguinte forma: 
+let galao = 1;
+let litro = 3.78541;
+conversor = galao * litro * 103.56;
+console.log(`103.56gal equivalem a${conversor}l`);
+
+//f) Procure uma forma de converter xícara (xic) para litro (l) e escreva
+//um programa que converta 450xic para litro. Imprima  a resposta 
+//no console da seguinte forma:
+let xicara = 1;
+let ml = 0.24;
+litro = 1;
+
+conversor =  ml * litro * xicara * 450; 
+console.log(`450xic equivalem a ${conversor} litros`)
+
+//g) Escolha ao menos um dos itens anteriores e modifique o programa
+//para que ele peça ao usuário o valor da unidade original antes de converter
+xicara = Number(prompt("digite quantas xicaras você quer converter em litros! "))
+conversor = xicara * ml * litro;
+console.log(`O valor convertido é ${conversor} litros`)
+*/
