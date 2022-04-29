@@ -255,3 +255,218 @@ const amigoAssistir = () => {
 }
 amigoAssistir()
 */
+
+
+
+
+
+
+// 2- Você foi contratado para criar um sistema de vendas de ingressos de jogos de um estádio 
+// e futebol. Para esta compra, o usuário deve fornecer algumas informações:
+// - Nome completo;
+// - Tipo de jogo: IN indica internacional; e DO indica doméstico;
+// - Etapa do jogo: SF indica semi-final; DT indica decisão de terceiro lugar; e FI indica final
+// - Categoria: pode ser as opções 1, 2, 3 ou 4;
+// - Quantidade de ingressos
+// O seu sistema deve solicitar estas informações ao usuário, através do prompt . Além disso, 
+// ele deve imprimir tudo isso, junto com o valor de cada ingresso e o valor total que o
+// usuário tem que pagar (ou seja, o valor unitário do ingresso multiplicado pela quantidade). 
+// Abaixo, há a tabela com os valores de cada ingresso e exemplos de execução do programa.
+// Lembrando que o valor de jogos internacionais é o mesmo de jogos domésticos, mas seus 
+// preços devem ser multiplicados pelo valor do dólar (considerar o dólar = R$4,10
+
+/*
+const nomeCliente = prompt("Digite seu nome completo! ")
+const tipoJogo = prompt(`Por favor, digitar as iniciais em maisculo como representado:
+- Qual o tipo de jogo?
+- IN indica internacional;
+- DO indica doméstico; `)
+const etapaJogo = prompt(`Por favor, digitar as iniciais em maisculo como representado:
+- Qual a etapa do jogo ?
+- SF indica semi-final;
+- DT indica decisão de terceiro lugar;
+- FI indica final `)
+const categoria = Number(prompt(`Digite apenas numero: 
+Qual a categoria que você dejesa 1, 2, 3 ou 4;`))
+const quantiaIngresso = Number(prompt("Quantos ingressos você vai querer?"))
+
+const valorIngressoSF = {
+    cat1: 1320,
+    cat2: 880,
+    cat3: 550,
+    cat4: 220
+} 
+const valorIngressoDT = {
+    cat1: 660,
+    cat2: 440,
+    cat3: 330,
+    cat4: 170
+}
+const valorIngressoFI = {
+    cat1: 1980,
+    cat2: 1320,
+    cat3: 880,
+    cat4: 330
+}
+
+function jogo() {
+    if (tipoJogo === "DO"){
+        if (etapaJogo === "SF" && categoria === 1){       
+        let multiplicar = quantiaIngresso * valorIngressoSF.cat1 
+        return multiplicar
+        }else if (etapaJogo === "SF" && categoria === 2){
+            multiplicar = quantiaIngresso * valorIngressoSF.cat2 
+            return multiplicar
+        }else if (etapaJogo === "SF" && categoria === 3){
+            multiplicar = quantiaIngresso * valorIngressoSF.cat3 
+            return multiplicar
+        }else if (etapaJogo === "SF" && categoria === 4){
+            multiplicar = quantiaIngresso * valorIngressoSF.cat4 
+            return multiplicar
+        }
+        // aqui ja entra outra linha 
+        if (etapaJogo === "DT" && categoria === 1){
+            multiplicar = quantiaIngresso * valorIngressoDT.cat1
+            return multiplicar
+        }else if (etapaJogo === "DT" && categoria === 2){
+            multiplicar = quantiaIngresso * valorIngressoDT.cat2
+            return multiplicar
+        }else if (etapaJogo === "DT" && categoria === 3){
+            multiplicar = quantiaIngresso * valorIngressoDT.cat3
+            return multiplicar
+        }else if (etapaJogo === "DT" && categoria === 4){
+            multiplicar = quantiaIngresso * valorIngressoDT.cat4
+            return multiplicar
+        }
+        // outra linha de novo
+        if (etapaJogo === "FI" && categoria === 1){
+            multiplicar = quantiaIngresso * valorIngressoFI.cat1
+            return multiplicar
+        }else if (etapaJogo === "FI" && categoria === 2){
+            multiplicar = quantiaIngresso * valorIngressoFI.cat2
+            return multiplicar
+        }else if (etapaJogo === "FI" && categoria === 3){
+            multiplicar = quantiaIngresso * valorIngressoFI.cat3
+            return multiplicar
+        }else if (etapaJogo === "FI" && categoria === 4){
+            multiplicar = quantiaIngresso * valorIngressoFI.cat4
+            return multiplicar
+        }
+    }
+    if (tipoJogo === "IN"){
+        if (etapaJogo === "SF" && categoria === 1){       
+           multiplicar = quantiaIngresso * valorIngressoSF.cat1 * 4.10
+        return multiplicar
+        }else if (etapaJogo === "SF" && categoria === 2){
+            multiplicar = quantiaIngresso * valorIngressoSF.cat2 * 4.10
+            return multiplicar
+        }else if (etapaJogo === "SF" && categoria === 3){
+            multiplicar = quantiaIngresso * valorIngressoSF.cat3  * 4.10
+            return multiplicar
+        }else if (etapaJogo === "SF" && categoria === 4){
+            multiplicar = quantiaIngresso * valorIngressoSF.cat4  * 4.10
+            return multiplicar
+        }
+
+        if (etapaJogo === "DT" && categoria === 1){
+            multiplicar = quantiaIngresso * valorIngressoDT.cat1  * 4.10
+            return multiplicar
+        }else if (etapaJogo === "DT" && categoria === 2){
+            multiplicar = quantiaIngresso * valorIngressoDT.cat2 * 4.10
+            return multiplicar
+        }else if (etapaJogo === "DT" && categoria === 3){
+            multiplicar = quantiaIngresso * valorIngressoDT.cat3  * 4.10
+            return multiplicar
+        }else if (etapaJogo === "DT" && categoria === 4){
+            multiplicar = quantiaIngresso * valorIngressoDT.cat4  * 4.10
+            return multiplicar
+        }
+        
+        if (etapaJogo === "FI" && categoria === 1){
+            multiplicar = quantiaIngresso * valorIngressoFI.cat1  * 4.10
+            return multiplicar
+        }else if (etapaJogo === "FI" && categoria === 2){
+            multiplicar = quantiaIngresso * valorIngressoFI.cat2  * 4.10
+            return multiplicar
+        }else if (etapaJogo === "FI" && categoria === 3){
+            multiplicar = quantiaIngresso * valorIngressoFI.cat3  * 4.10
+            return multiplicar
+        }else if (etapaJogo === "FI" && categoria === 4){
+            multiplicar = quantiaIngresso * valorIngressoFI.cat4  * 4.10
+            return multiplicar
+        }
+    }
+}
+
+// esse codigo abaixo, troca oque o usuario escrever DO ou IN para Nacional ou Internacional
+// fiz isso so para ficar parecido com o exemplo
+const nomeJogo = () => {
+    if(tipoJogo === "DO"){
+    return "Jogo Nacional (DO)"
+    } else if (tipoJogo === "IN"){
+        return "Jogo Internacional (IN)"
+    }
+}
+
+// ja esse codigo, troca a etapa do jogo, basicamente a mesma coisa do de cima trocando outros valores
+const alterarEtapa = () => {
+    if(etapaJogo === "SF"){
+        return "Semi-finais"
+    }else if(etapaJogo === "DT"){
+        return "Decisão de terceiro lugar"
+    }else if(etapaJogo === "FI"){
+        return "Final"
+    }
+}
+
+
+// esse codigo aqui é para determinar o valor unitario dos ingressos
+function ingresoUnidade() {
+    if (tipoJogo === "DO" || tipoJogo === "IN"){
+        if (etapaJogo === "SF" && categoria === 1){       
+        return valorIngressoSF.cat1 
+        } else if (etapaJogo === "SF" && categoria === 2){       
+            return valorIngressoSF.cat2
+        } else if (etapaJogo === "SF" && categoria === 3){       
+            return valorIngressoSF.cat3
+        } else if (etapaJogo === "SF" && categoria === 4){       
+            return valorIngressoSF.cat4
+        }
+        // separando
+        else if (etapaJogo === "DT" && categoria === 1){       
+            return valorIngressoDT.cat1
+        } else if (etapaJogo === "DT" && categoria === 2){       
+            return valorIngressoDT.cat2
+        } else if (etapaJogo === "DT" && categoria === 3){       
+            return valorIngressoDT.cat3
+        } else if (etapaJogo === "DT" && categoria === 4){       
+            return valorIngressoDT.cat4
+        }
+        // separando
+        else if (etapaJogo === "FI" && categoria === 1){       
+            return valorIngressoFI.cat1
+        } else if (etapaJogo === "FI" && categoria === 2){       
+            return valorIngressoFI.cat2
+        } else if (etapaJogo === "FI" && categoria === 3){       
+            return valorIngressoFI.cat3
+        } else if (etapaJogo === "FI" && categoria === 4){       
+            return valorIngressoFI.cat4
+        }
+    }
+}   
+
+
+console.log(`---Dados da compra--- 
+Nome do cliente: ${nomeCliente} 
+Tipo do jogo: ${nomeJogo()} 
+Etapa do jogo: ${alterarEtapa()}
+Categoria: ${categoria} 
+Quantidade de Ingressos: ${quantiaIngresso} 
+
+---Valores--- 
+Valor do ingresso: R$ ${ingresoUnidade()}
+Valor total: R$ ${jogo()}`)
+*/
+
+//  PS: provavelmente fiz algumas coisas desnecessarias entao desde já, peço desculpas pelo
+// codigo bagunçado ,e grande , mas eu queria testar o quanto eu tava entendo sobre o assunto.
