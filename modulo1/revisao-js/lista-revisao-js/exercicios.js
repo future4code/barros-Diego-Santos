@@ -171,15 +171,53 @@ function retornaPessoasNaoAutorizadas(pessoas) {
 
 // EXERCÍCIO 14
 function retornaContasComSaldoAtualizado(contas) {
-
+    (contas[0].saldoTotal= 500,contas[0].compras = [],
+    contas[1].saldoTotal= 6260,contas[1].compras = [],
+    contas[2].saldoTotal= -3340,contas[2].compras = [],
+    contas[3].saldoTotal= -1900,contas[3].compras = [],
+    contas[4].saldoTotal= 1300,contas[4].compras = [],
+    contas[5].saldoTotal= 1200,contas[5].compras = [])
+    return contas
 }
 
 // EXERCÍCIO 15A
 function retornaArrayOrdenadoAlfabeticamente(consultas) {
-  
+    // esse codigo do namesOrder funciona, mas eu nao 
+     // fiz isso , so coloquei aqui para ver se iria funcionar
+
+   /*    
+   function namesOrder(arrayObj){
+        return arrayObj.sort(function(objA,objB) {
+          a = objA.nome.toLowerCase().replace(/[àáâãäå]/,"a").replace(/[èéêë]/,"e").replace(/[ìíîï]/,"i").replace(/[òóôõö]/,"o").replace(/[ùúûü]/,"u").replace(/[ç]/,"c").replace(/[^a-z0-9]/gi,'')
+          b = objB.nome.toLowerCase().replace(/[àáâãäå]/,"a").replace(/[èéêë]/,"e").replace(/[ìíîï]/,"i").replace(/[òóôõö]/,"o").replace(/[ùúûü]/,"u").replace(/[ç]/,"c").replace(/[^a-z0-9]/gi,'')
+          return a < b ? -1 : a > b ? 1 : 0;
+        })
+    }
+    return namesOrder(consultas)
+    */
+    
+    // os dois codigos abaixo nao funciona
+    
+    
+    return consultas.sort( (a,b) => {
+        if(a.name > b.name){
+            return -1;
+        }
+        if(a.name < b.name){
+            return 1;
+        }
+        return 0;
+    })
+    
+
+    // const ordemAlfabetica = consultas.sort((a,b) => a.nome - b.nome)
+    // return ordemAlfabetica 
+     
 }
 
 // EXERCÍCIO 15B
 function retornaArrayOrdenadoPorData(consultas) {
-   
+    // codigo abaixo nao funciona
+    const ordemData = consultas.sort((a,b) => a.dataDaConsulta - b.dataDaConsulta )
+    return ordemData
 }
