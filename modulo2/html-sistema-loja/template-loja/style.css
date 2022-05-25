@@ -1,0 +1,437 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    object-fit: cover;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* css da pagina principal/index  */ 
+/* eu escrevo dessa forma colocando a class e depois a tag/elemento por achar melhor/mais organizado */ 
+/* e tambem sempre tento colocar a organização na ordem do body de cima para baixo*/
+.cabecalho {
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #000000ea;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 30px 0 40px;
+    border-radius: 0px 0px 5px 8px;
+    box-shadow: 2px 4px 4px #020101;
+    margin-bottom: 40px;
+}
+.cabecalho header{
+    text-align: center;
+    color: #f1f1f1;
+    margin: 0 auto 50px;
+    padding: 20px;
+    font-size: 25px;
+    box-shadow: 0px 1px 3px #f1f1f1;
+    border-radius: 20px;
+}
+.cabecalho header:hover {
+    box-shadow: 3px 5px 5px #0000ff5b;
+}
+.cabecalho header h1 { 
+    font-size: 45px;
+}
+.cabecalho nav {
+    margin: 0 auto;
+}
+.cabecalho nav a {
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #252220;
+    background-color: #ffffff;
+    padding: 10px 5px;
+    margin: 0 5px;
+    box-shadow: 1px 2px 2px #b1aeae;
+    border-radius: 8px;
+    text-decoration: none;
+}
+.cabecalho nav a:hover {
+    background-color: #050505;
+    color: #fafafa;
+    box-shadow: 0px 2px 1px #ff2d2d9d;
+    border: 1px solid #000;
+    font-family: sans-serif;
+    transition: 400ms;
+}
+
+main {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    font-size: 25px;
+    color: #000;
+    margin: 80px 0;
+    box-shadow: 4px 1px 3px #ff2d2d9d;
+    padding: 40px;
+}
+main:hover {
+    box-shadow: 2px 3px 3px #0000ff5b;
+    border: 1px solid #000;
+}
+
+footer {
+    position: fixed;
+    border: 20px;
+    width: 100%;
+    bottom: 0;
+    font-size: 30px;
+    border-top: 4px solid #bff0ff;
+    background-color: #020101;
+    text-align: center;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #f1f1f1;
+    font-family: initial;
+}
+footer .redes {
+    display: flex;
+    margin-top: 20px;
+}
+footer .redes div {
+    width: 140px;
+    margin: 0 10px;
+}
+footer .redes div img {
+    width: 40%;
+    border-radius: 100%;
+}
+footer .redes div a {
+    color: #000;
+    text-decoration: none;
+    background-color: white;
+    padding: 2px 6px;
+    border-radius: 15px;
+}
+footer .redes div a:hover {
+    box-shadow: -3px 2px 4px rgb(153, 153, 153);
+    border: 1px solid #0026ff;
+}
+footer .copyright {
+    font-size: 15px;
+    margin-top: 10px;
+    color: #f1f1f185;
+}
+
+
+/* abaixo css do ctrl-estoque*/ 
+.inicio-estoq  {
+    background-color: #000000;
+    color: #ffffff;
+    font-style: italic;
+    font-size: 40px;
+    padding: 20px 0;
+    text-align: center;  
+    box-shadow: 3px 2px 4px #00ff9db4;
+}
+.links-estoq {
+    margin: 15px 0;
+    text-align: center;
+    font-size: 20px;
+}
+.links-estoq a {
+    text-decoration: none;
+    color: #020202;
+    background-color: #ffffff;
+    box-shadow: 2px 4px 4px #000000;
+    padding: 4px 6px;
+    margin: 0 6px;
+    border-radius: 20px;
+}
+.links-estoq a:hover {
+    color: #4f4ffc;
+    border: 2px solid #ff0000;
+}
+.titulo-estoq {
+    margin: 20px auto;
+    padding: 5px;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #414040;
+}
+.tabela-estoq {
+    border: 1px solid #000000;
+    margin-top: 50px;
+    text-align: center;
+    padding: 20px;
+    background-color: #d6d6d67c;
+}
+.tabela-estoq td {
+    border: 1px solid #000000;
+    border-radius: 10px;
+    width: 25%;
+}
+.tabela-estoq td:hover {
+    box-shadow: 2px 4px 4px #000000;
+    
+}
+.tabela-estoq tr .organizar-img img {
+    width: 140px;
+    border-radius: 15px;
+    max-height: 180px;
+    object-fit: cover;
+}
+
+
+/* Abaixo css add-produto */
+.inicio-addProd {
+    background-color: #000000;
+    color: #ffffff;
+    font-style: italic;
+    font-size: 40px;
+    padding: 20px 0;
+    text-align: center;  
+    box-shadow: 3px 2px 4px #00ff9db4;
+} 
+.links-addProd{
+    margin: 15px 0;
+    text-align: center;
+    font-size: 20px;
+}
+.links-addProd a {
+    text-decoration: none;
+    color: #020202;
+    background-color: #ffffff;
+    box-shadow: 2px 4px 4px #000000;
+    padding: 4px 6px;
+    margin: 0 6px;
+    border-radius: 20px;
+}
+.links-addProd a:hover {
+    color: #4f4ffc;
+    border: 2px solid #ff0000;
+}
+.titulo-addProd {
+    margin: 20px auto 40px;
+    padding: 5px;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #414040;
+}
+.form-addProd {
+    margin: 0 auto;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 25px;
+    border: 2px inset; 
+    box-shadow: 1px -4px 4px black;
+    width: 800px;
+}
+.form-addProd input {
+    margin-bottom: 40px;
+    height: 30px;
+}
+.form-addProd button {
+    width: 220px;
+    font-size: 30px;
+    background-color: #000;
+    color: #f1f1f1;
+    border-radius: 20px;
+}
+.form-addProd button:hover {
+    border:2px solid #f1f1f1;
+    box-shadow: 2px 3px 3px #000000;
+    color: #fc9e5f;
+}
+
+
+/* abaixo css funcionarios*/
+.inicio-funcionarios {
+    background-color: #000000;
+    color: #ffffff;
+    font-style: italic;
+    font-size: 40px;
+    padding: 20px 0;
+    text-align: center;  
+    box-shadow: 3px 2px 4px #00ff9db4;
+} 
+.links-funcionarios{
+    margin: 15px 0;
+    text-align: center;
+    font-size: 20px;
+}
+.links-funcionarios a {
+    text-decoration: none;
+    color: #020202;
+    background-color: #ffffff;
+    box-shadow: 2px 4px 4px #000000;
+    padding: 4px 6px;
+    margin: 0 6px;
+    border-radius: 20px;
+}
+.links-funcionarios a:hover {
+    color: #4f4ffc;
+    border: 2px solid #ff0000;
+}
+.titulo-funcionarios {
+    margin: 20px auto;
+    padding: 5px;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #414040;
+}
+.lista-funcionarios {
+    margin: 0 auto;
+    list-style: square ;
+    font-size: 40px;
+    border: 4px solid;
+    padding: 20px;
+}
+.lista-funcionarios li:hover {
+    box-shadow: 2px 2px 4px black;
+    border: 1px solid;
+}
+
+
+
+
+
+
+/* Abaixo css da pagina de vendas/Desafio*/
+.inicio-vendas {
+    background-color: #000000;
+    color: #ffffff;
+    font-style: italic;
+    font-size: 40px;
+    padding: 20px 0;
+    text-align: center;  
+    box-shadow: 3px 2px 4px #00ff9db4;
+} 
+.links-vendas {
+    margin: 15px 0;
+    text-align: center;
+    font-size: 20px;
+}
+.links-vendas a {
+    text-decoration: none;
+    color: #020202;
+    background-color: #ffffff;
+    box-shadow: 2px 4px 4px #000000;
+    padding: 4px 6px;
+    margin: 0 6px;
+    border-radius: 20px;
+}
+.links-vendas a:hover {
+    color: #4f4ffc;
+    border: 2px solid #ff0000;
+}
+.titulo-vendas {
+    margin: 20px auto;
+    padding: 5px;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #414040;
+}
+.formulario-vendas {
+    margin: 0 auto;
+    list-style: square ;
+    font-size: 40px;
+    border: 4px solid;
+    padding: 60px 120px;
+}
+.formulario-vendas select {
+    font-size: 30px;
+}
+
+.formulario-vendas .menor {
+    font-size: 30px;
+}
+.formulario-vendas .aumentar-tamanho {
+    display: block;
+    margin-top: 20px;
+    font-size: 40px;
+    padding: 5px 10px;
+    border-radius: 20px;
+}
+.formulario-vendas .aumentar-tamanho:hover {
+    color: #f1f1f1;
+    background-color: black;
+    box-shadow: 1px 3px 4px black;
+}
+
+
+
+
+
+
+
+/* Abaixo css do Historico de vendas/Desafio */
+.inicio-historicoV {
+    background-color: #000000;
+    color: #ffffff;
+    font-style: italic;
+    font-size: 40px;
+    padding: 20px 0;
+    text-align: center;  
+    box-shadow: 3px 2px 4px #00ff9db4;
+} 
+.links-historicoV  {
+    margin: 15px 0;
+    text-align: center;
+    font-size: 20px;
+}
+.links-historicoV  a {
+    text-decoration: none;
+    color: #020202;
+    background-color: #ffffff;
+    box-shadow: 2px 4px 4px #000000;
+    padding: 4px 6px;
+    margin: 0 6px;
+    border-radius: 20px;
+}
+.links-historicoV  a:hover {
+    color: #4f4ffc;
+    border: 2px solid #ff0000;
+}
+.titulo-historicoV  {
+    margin: 20px auto;
+    padding: 5px;
+    font-size: 40px;
+    text-shadow: 2px 2px 4px #414040;
+}
+.tabela-historicoV {
+    margin: 0 auto;
+    list-style: square ;
+    font-size: 40px;
+    border: 4px solid;
+    padding: 20px;
+    text-align: center;
+}
+.tabela-historicoV tr td {
+    border: 1px solid;
+    padding: 5px;
+}
+.tabela-historicoV td:hover {
+    box-shadow: 2px 2px 4px black;
+    border: 1px solid;
+}
+.formulario-historicoV {
+    padding: 20px 80px;
+    margin: 20px auto;
+    font-size: 30px;
+    border: 1px solid gray;
+
+}
+.formulario-historicoV label {
+    margin: 20px 200px;
+}
+.formulario-historicoV input {
+    font-size: 25px;
+}
+.formulario-historicoV .botao-historicoV {
+    margin: 30px 0 10px 220px ;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+.formulario-historicoV .botao-historicoV:hover {
+    box-shadow: 2px 3px 4px #000;
+    color: #f1f1f1;
+    background-color: #000;
+}

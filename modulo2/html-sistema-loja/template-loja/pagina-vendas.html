@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Pagina de vendas/DESAFIO</title>
+</head>
+<body>
+    <!-- Desafio 1 - Página de Venda: Deve conter um formulário no qual o vendedor coloque 
+        cada produto que o cliente está comprando. Crie uma lista com esses produtos.
+         Coloque, também, as opções de pagamento: dinheiro ou cartão
+    -->
+
+    <header class="inicio-vendas">
+        <p><Strong>Bio Natura</Strong></p>
+    </header>
+    
+    <nav class="links-vendas">
+        <a href="index.html">Página Inicial</a>
+        <a href="pagina-vendas.html">Pagina de vendas</a> 
+        <a href="historico-vendas.html">Historico de vendas</a>
+        <a href="ctrl-estoque.html">Controle de Estoque </a>
+        <a href="add-produto.html">Adicionar Produto </a>
+        <a href="funcionarios.html">Funcionários</a>
+    </nav>
+
+    <h2 class="titulo-vendas">Página de Venda</h2>
+    
+    <form class="formulario-vendas">
+        <label>Escolha o Produto</label><br>
+        <select name="produtos" id="produtos">
+            <option>---------</option>
+            <option>Propolis Spray</option>
+            <option>Xarope misto</option>
+            <option>Ginkgo biloba</option>
+            <option>Ômega 3 </option>
+        </select><br>
+
+        <label>Escolha a forma de pagamento</label><br>
+        <input type="radio" name="pagamento" id="cartao" value="cartao">
+        <span class="menor">Cartão</span>
+        <input type="radio" name="pagamento" id="dinheiro" value="dinheiro" checked>
+        <span class="menor">Dinheiro</span>
+        <input class="aumentar-tamanho" type="submit" name="confirmar" id="confirmar" value="Confirmar">
+        <br>
+        
+    </form>
+</body>
+</html>
