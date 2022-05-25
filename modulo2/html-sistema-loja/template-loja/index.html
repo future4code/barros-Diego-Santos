@@ -4,22 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet">
     <title>Bio Natura</title>
 </head>
 <body>
-    <header>
-        <h1>Bem-vind@ a <em>Bio Natura</em>!</h1>
-        <p>Conosco voçê fica mais <strong>Saudável</strong></p>
-    </header>
+    <div class="cabecalho">
+        <header>
+            <h1>Bem-vind@ a <em>Bio Natura</em>!</h1>
+            <p>Conosco voçê fica mais <strong>Saudável</strong></p>
+        </header>
+    
+        <nav>
+            <!--<a href="index.html">Página Inicial </a> comentando para melhorar
+            o fluxo de links, tambem vou reorganizar os links, desafio do exercercio -->
+            <a href="pagina-vendas.html">Pagina de vendas</a> 
+            <a href="historico-vendas.html">Historico de vendas</a>
+            <a href="ctrl-estoque.html">Controle de Estoque </a>
+            <a href="add-produto.html">Adicionar Produto </a>
+            <a href="funcionarios.html">Funcionários</a>
+        </nav>
+    </div>
 
-    <nav>
-        <a href="index.html">Página Inicial |</a>
-        <a href="ctrl-estoque.html">Controle de Estoque |</a>
-        <a href="add-produto.html">Adicionar Produto |</a>
-        <a href="funcionarios.html">Funcionários</a>
-    </nav>
-
-    <main>
+    <main >
         <P>
             Peça já seus Produtos da flora brasileira.<br>
             Produtos genuinamente <strong>naturais</strong> que não agride o seu organismo.<br>
@@ -30,9 +36,21 @@
     
     <footer>
         <p>Siga-nos nas redes sociais!</p>
-        <img src="imagens/instagram-novo.webp"/>
-        <img src="imagens/logotipo-facebook.jpg"/>
-        <img src="imagens/linkedin-log.jpg"/>
+        <div class="redes">
+            <div class="social-img">
+                <img src="imagens/instagram-novo.jpg"/>
+                <a href="#">Instagram</a>
+            </div>
+            <div class="social-img">
+                <img src="imagens/logotipo-facebook.jpg"/>
+                <a href="#">Facebook</a>
+            </div>
+            <div class="social-img">
+                <img src="imagens/linkedin-log.jpg"/>
+                <a href="#">Linkedin</a>
+            </div>
+        </div>
+        <p class="copyright">copyright © | Labenu/Diego Rios</p>
     </footer>
 </body>
 </html>

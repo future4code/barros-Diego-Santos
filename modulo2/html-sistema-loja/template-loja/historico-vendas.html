@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <title>Historico de vendas/DESAFIO</title>
+</head>
+<body>
+    <!-- Desafio 2 - Página de Histórico de Vendas: Deve conter uma lista com as informações de cada
+        venda realizada: horário;  funcionário que realizou; valor total da compra e forma 
+        de pagamento. Além disso, deve conter um campo onde consigamos filtrar por data,
+        escrevendo-a por extenso.
+    -->
+
+    <header class="inicio-historicoV">
+        <p><Strong>Bio Natura</Strong></p>
+    </header>
+    
+    <nav class="links-historicoV">
+        <a href="index.html">Página Inicial</a>
+        <a href="pagina-vendas.html">Pagina de vendas</a> 
+        <a href="historico-vendas.html">Historico de vendas</a>
+        <a href="ctrl-estoque.html">Controle de Estoque </a>
+        <a href="add-produto.html">Adicionar Produto </a>
+        <a href="funcionarios.html">Funcionários</a>
+    </nav>
+
+    <h2 class="titulo-historicoV">Historico de vendas</h2>
+
+    <table class="tabela-historicoV">
+        <tr>
+            <th>Horario:</th>
+            <th>Vendedor</th>
+            <th>Valor total</th>
+            <th>Forma de pagamento</th>
+        </tr>
+
+        <tr>
+            <td>16:44</td>
+            <td>Gabriel Fernandes</td>
+            <td>R$ 725,00</td>
+            <td>Cartão</td>
+        </tr>
+
+        <tr>
+            <td>10:01</td>
+            <td>Jordan Carvalho</td>
+            <td>R$ 1430,00</td>
+            <td>Cartão</td>
+        </tr>
+
+        <tr>
+            <td>17:12</td>
+            <td>Gabriel Fernandes</td>
+            <td>R$ 23,00</td>
+            <td>Dinheiro</td>
+        </tr>
+
+        <tr>
+            <td>14:25</td>
+            <td>Jhonatas Carvalho</td>
+            <td>R$ 43,50</td>
+            <td>Dinheiro</td>
+        </tr>
+
+        <tr>
+            <td>11:53</td>
+            <td>Gabriel Fernandes</td>
+            <td>R$ 257,20</td>
+            <td>Dinheiro</td>
+        </tr>
+
+        <tr>
+            <td>15:32</td>
+            <td>Jordan Carvalho</td>
+            <td>R$ 94,00</td>
+            <td>Dinheiro</td>
+        </tr>
+
+        <tr>
+            <td>09:37</td>
+            <td>Daniel Rosa</td>
+            <td>R$ 25,00</td>
+            <td>Dinheiro</td>
+        </tr> 
+
+        <tr>
+            <td>13:31</td>
+            <td>Jhonatas Carvalho</td>
+            <td>R$ 72,00</td>
+            <td>Cartão</td>
+        </tr>
+    </table>
+
+    <form class="formulario-historicoV">
+        <label for="name">Filtrar vendas</label>
+        <br>
+        <span>Digite a data</span>
+        <input type="text" name="filtrar" id="filtrar" value="">
+        <br>
+        
+        <br>
+        <span >Escolha uma aqui</span>
+        <input type="date" name="data" id="data">
+        <br>
+        <input class="botao-historicoV" type="submit" name="enviar" value="Verificar">
+
+    </form>
+</body>
+</html>
