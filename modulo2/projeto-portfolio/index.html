@@ -13,15 +13,19 @@
 </head>
 <body>
 <!--Barra de menu-->
-<nav>
-    <div class="img-nav">
-        <img src="">   
+<nav class="menu-nav">
+    <div class="menu-links">
+        <a href="#">Inicio</a>
+        <a href="#aprendendo">linguagens</a>
+        <a href="#galeria">Projetos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contatos">Contato</a>
     </div>
-    <div class="menu-nav">
-    
+    <div class="menu-img">
+        <img src="imagens/pixane.jpg">   
     </div>
 </nav>
-<div class="inicio">
+<div class="inicio" id="home">
     <h1>Diego Rios Santos</h1>
     <h2>Desenvolvedor Web Full-Stack</h2>
     <hr>
@@ -29,7 +33,7 @@
     <p>Nunca tenha certeza de nada,porque a saboria começa com a dúvida.</p> -->
 </div>
 <!-- abaixo esta sobre mim-->
-<header  id="home">
+<header  id="head-home">
     <div class="info">
         <div class="info-apresentacao">
             <h1>Um pouco sobre mim</h1>
@@ -86,7 +90,7 @@
     </div>
 </header>
 <section class="linguagens" id="aprendendo">
-    <!--Sei que html e css não entra como uma linguagem, mas é so pra organizar aqui-->
+    <!--Coloquei essa area so pra aumentar o conteudo da pagina-->
     <h1>Aprendizado na Labenu</h1>
     <div class="aprendendo">
         <div>
@@ -99,7 +103,7 @@
                 <div> <img src="imagens/Frontend-img/react.png" alt="React"> </div>
             </div>
         </div>
-
+        <div class="aprendendo-div"> <img src="imagens/479959.jpg"> </div>
         <div>
             <h2>Back-end</h2>
             <div class="backend">
@@ -150,6 +154,7 @@
         </div>
     </div>
 </section>
+<!--Abaixo lista de habilidades-->
 <section class="sobre-habilidade" id="habilidades">
     <h1>Habilidades</h1>
     <div class="habilidade">
@@ -178,7 +183,60 @@
         </div>
     </div>
 </section>
-    
 
+<section class="sobre-form">
+    <h2>Entre em contato</h2>
+    <form action="#">
+        <label for="name">Nome</label><br>
+        <input type="text" name="nome" id="nome">
+        <br>
+        <label for="email">Email</label><br>
+        <input type="email" name="email" id="email">
+        <br>
+        <label for="textarea">Deixe uma mensagem</label><br>
+        <textarea name="area-texto" id="area-texto" cols="30" rows="5"></textarea>
+        <br>
+        <input class="botao" type="submit" name="enviar" id="enviar">
+    </form>    
+</section>
+<hr>
+<footer class="final" id="contatos">
+    <h2>Redes Sociais</h2>
+    <p>tefelefone / celuluar</p>
+    <p>+55-(74)-99132-3720</p>
+    <ul>
+        <li>
+             <a href="https://br.linkedin.com/?trk=guest_homepage-basic_nav-header-logo" target="_blanck">
+                <img src="imagens/img-redes/logotipo-do-linkedin.png" alt="Linkedin">
+                Linkedin
+             </a>
+        </li>
+        <li>
+            <a href="https://github.com/future4code/barros-Diego-Santos" target="_blanck">
+                <img src="imagens/img-redes/github.png" alt="GitHub">
+                GitHub
+            </a>
+        </li>
+        <li> 
+            <a href="https://www.facebook.com/" target="_blanck">
+                <img src="imagens/img-redes/facebook.png" alt="Facebook">
+                Facebook
+            </a> 
+        </li>
+        <li> 
+            <a href="https://www.instagram.com/" target="_blanck">
+                <img src="imagens/img-redes/instagram.png" alt="Instagram">
+                Instagram
+            </a> 
+        </li>
+        <li> 
+            <a href="https://web.whatsapp.com/" target="_blanck">
+                <img src="imagens/img-redes/whatsapp.png" alt="Whatsapp"> 
+                Whatsapp
+            </a>
+        </li>
+    </ul>
+    <p class="copyright">copyright © | Labenu/Barros/Diego Rios</p>
+</footer>
 </body>
 </html>

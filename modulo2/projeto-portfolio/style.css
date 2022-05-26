@@ -14,6 +14,41 @@ body {
 }
 
 /* Menu-nav*/
+.menu-nav {
+    top: 0;
+    position: sticky;
+    z-index: 1;
+    display: flex;
+    justify-content: space-around;
+    background-color: #000;
+    box-shadow: 1px 2px 4px #1300009c;
+    font-size: 20px;
+    padding: 20px 0;
+}
+.menu-nav .menu-links a {
+    padding: 5px;
+    margin: 2px 10px;
+    color: #f1f1f1;
+}
+.menu-nav .menu-links a:hover {
+    border: 1px solid;
+    color: #000;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: #000;
+}
+.menu-nav .menu-links a:active {
+    color: #ff0000bb;
+}
+.menu-img {
+    max-width: 40px;
+    border-radius: 100%;
+}
+.menu-img img {
+    width: 100%;
+    border-radius: 100%;
+}
+/*começo da pagina*/
 .inicio h1{
     color: #f1f1f1;
     font-family: 'Roboto', sans-serif;
@@ -51,7 +86,7 @@ body {
 }
 
 /* estilização do header home */
-#home {
+#head-home {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -186,6 +221,7 @@ body {
 /* section linguagens */
 .linguagens {
     margin: 0 auto;
+    max-width: 1400px;
     padding-top: 20px;
     text-align: center;
 }
@@ -219,18 +255,30 @@ body {
     width: 90px;
     height: 90px;
     margin: 3px 0;
-    box-shadow: 2px 2px 5px #7d8a81;
-
+    box-shadow: 0px 1px 5px #7d8a81;
 }
 .linguagens .aprendendo .frontend div:hover {
-    box-shadow: 1px 3px 3px #006ec9;
+    box-shadow: -1px 3px 3px #006ec9;
+    border: 1px solid #f1f1f15e;
 } 
 .linguagens .aprendendo .frontend div img {
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
-/* abaixo sobre back-end */
+/* abaixo imagem entre front-end e back-end*/
+.aprendendo .aprendendo-div {
+    max-width: 400px;
+    align-self: center;
+    border-radius: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.404);
+    box-shadow: 2px 2px 5px #7d8a81;
+}
+.aprendendo .aprendendo-div img {
+    width: 100%;
+    height: 300px;
+}
+/* abaixo  sobre  aprendendo back-end */
 .linguagens .aprendendo .backend{
     display: flex;
     flex-direction: column;
@@ -251,6 +299,7 @@ body {
 }
 .linguagens .aprendendo .backend div:hover {
     box-shadow: 1px 3px 3px #5c3101;
+    border: 1px solid #f1f1f15e;
 }
 .linguagens .aprendendo .backend div img {
     width: 100%;
@@ -367,4 +416,108 @@ body {
     border-radius: 10px;
     max-width: 480px;
     height: 465px;
+}
+/*Abaixo css do formulario*/
+.sobre-form {
+    text-align: center;
+    background-color: #f1f1f142;
+    border: 1px solid #000;
+    border-radius: 20px;
+    margin: 80px auto;
+    max-width: 1400px;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 15px 0;
+    box-shadow: 2px 4px 6px #ffffff96;
+}
+.sobre-form h2 {
+    color: #fff;
+    margin: 20px 0;
+    font-size: 1.8em;
+}
+.sobre-form label {
+    color: #f1f1f1;
+}
+.sobre-form input {
+    font-size: 30px;
+    margin: 10px;
+    border-radius: 5px;
+}
+.sobre-form input:hover {
+    box-shadow: 1px 2px 3px #000;
+}
+.sobre-form textarea {
+    font-size: 30px;
+    border-radius: 10px;
+}
+.sobre-form textarea:hover {
+    box-shadow: 1px 3px 5px #000;
+}
+
+
+/*parte final/footer com links de contato e redes sociais*/
+hr {
+    border: 0;
+    height: 2px;
+    background-image: linear-gradient(to right, transparent, #f8f0f0, transparent);
+}
+.final {
+    background-color: #0f1c27d7;
+    margin-top: 2px;
+    padding: 10px 0 20px;
+    text-align: center;
+    font-family:'Roboto', sans-serif ;
+}
+.final h2 {
+    color: #f1f1f1;
+    font-size: 2.4em;
+}
+.final p {
+    margin:15px 0 2px;
+    color: #f1f1f1;
+    font-size: 20px;
+}
+.final ul {
+    display: flex;
+    justify-content:center;
+    margin: 30px 0 15px;
+}
+.final ul li a {
+    font-size: 20px;
+    text-align: center;
+    padding: 10px;
+    background-color: black;
+    color: #f1f1f1;
+    border-radius: 15px;
+    margin: 0 10px;
+    font-style: italic;
+}
+.final ul li a:hover {
+    box-shadow: 1px 2px 6px #f1f1f1;
+    border: 1px solid #000;
+    color: rgb(255, 196, 0);
+}
+.final ul li a:active {
+    color: #5959eeb9;
+}
+.final ul li img {
+    width: 20px;
+    margin-top: 5px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+.final .copyright {
+    font-size: 15px;
+    color: #7a7a7ace;
+    width: 300px;
+    margin: 0 auto;
+    padding: 10px;
+    border-radius: 5px;
+}
+.final .copyright:hover {
+    box-shadow: 1px 2px 3px black;
+    color: #f1f1f1;
+    
 }
