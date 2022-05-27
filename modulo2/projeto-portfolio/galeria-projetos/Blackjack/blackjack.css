@@ -1,26 +1,31 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
+    background-image: linear-gradient(to top left, #767cb9, #01101d, #141414 );
+    color: white;
+    text-align: center;
 }
 h1 {
     background-color: #000000;
     color: #d61a13;
-    padding-left: 140px;
+    padding: 0 40px;
     padding-top: 10px;
     padding-bottom: 10px;
     width: 330px;
     border-radius: 10px;
     margin: 0 auto 80px;
-    box-shadow: 3px 2px 2px rgba(0, 0, 0, 0.534);
+    box-shadow: -1px 3px 2px rgba(126, 126, 126, 0.534);
 }
 .projetos-img {
     border: 2px solid black;
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     padding: 10px;
     text-align: center;
-    box-shadow: 1px 5px 5px;
+    box-shadow: 1px 5px 5px #000000;
     margin: 30px 0;
+    border-radius: 30px;
 }
 .projeto1{
     width: 500px;
@@ -63,10 +68,14 @@ h1 {
 }
 ul {
     font-size: 25px;
-    list-style: decimal-leading-zero;
+    list-style: none;
 }
 ul li {
     margin-top: 5px;
+}
+ul li:hover {
+    box-shadow: -1px 2px 3px black;
+    border-radius: 5px;
 }
 .link-home {
     font-weight: bolder;
@@ -75,11 +84,39 @@ ul li {
     padding: 10px;
     border-radius: 10px;
     border: 2px inset black;
-    box-shadow: 2px 3px 3px #610502;
+    box-shadow: -1px 3px 3px #fdfcfb;
 }
 .link-home:hover {
     color: rgb(12, 162, 248);
     background-color: rgb(8, 1, 70);
     border: 2px solid rgb(238, 159, 13);
     box-shadow: 1px 3px 3px #181818 ;
+}
+.projeto-anterior {
+    color: #fff8f8;
+    position: absolute;
+    left: 10%;
+    padding: 10px;
+    border-radius: 10px 5px;
+    background-color: #000324;
+    box-shadow: -1px 2px 3px #ffffff5e;
+    text-decoration: none;
+}
+.projeto-anterior:hover {
+    border: 1px solid black;
+    color: #14c581;
+}
+.proximo-projeto {
+    color: #f86b6b;
+    position: absolute;
+    right: 10%;
+    padding: 10px;
+    border-radius: 10px 5px;
+    background-color: #000324;
+    box-shadow: -1px 2px 3px #ffffff5e;
+    text-decoration: none;
+}
+.proximo-projeto:hover {
+    border: 1px solid black;
+    color: #14c581;
 }
