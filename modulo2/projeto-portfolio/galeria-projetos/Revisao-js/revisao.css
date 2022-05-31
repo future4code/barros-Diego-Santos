@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    background-image: linear-gradient(to top left, #000324, #014686, #150416 );
+    color: white;
+    text-align: center;
+}
+h1 {
+    background-color: #ffffff;
+    color: #080000;
+    padding: 0 40px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 330px;
+    border-radius: 10px;
+    margin: 0 auto 80px;
+    box-shadow: -1px 3px 2px #1d0101a1;
+}
+.projetos-img {
+    border: 2px solid black;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 1px 5px 5px #000324;
+    margin: 30px 0;
+    background-image: linear-gradient(to bottom left, #fff,#000,rgba(19, 17, 19, 0.534));
+    border-radius: 30px;
+}
+.projeto1{
+    width: 500px;
+    box-shadow: 2px 3px 3px black;
+    margin: 20px;
+    border: 1px solid black;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.projeto1 img {
+    width: 100%;
+    object-fit: cover;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+}
+.projeto1:hover img {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    object-fit: cover;
+    transition: 400ms;
+}
+.projeto2{
+    width: 500px;
+    box-shadow: 2px 3px 3px black;
+    margin: 20px;
+    border: 1px solid black;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.projeto2 img {
+    width: 100%;
+    object-fit: cover;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+}
+.projeto2:hover img {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+    object-fit: cover;
+}
+ul {
+    font-size: 25px;
+    list-style: none;
+}
+ul li {
+    margin-top: 5px;
+}
+ul li:hover {
+    box-shadow: -1px 2px 3px black;
+    border-radius: 5px;
+}
+.link-home {
+    font-size: 30px;
+    text-decoration: none;
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 3px 3px #02610f;
+}
+.link-home:hover {
+    color: black;
+    background-color: aliceblue;
+    border: 2px solid rgb(238, 159, 13);
+    box-shadow: 1px 3px 3px #a214c5 ;
+}
+.projeto-anterior {
+    color: #fff8f8;
+    position: absolute;
+    left: 10%;
+    padding: 10px;
+    border-radius: 10px 5px;
+    background-color: #000324;
+    box-shadow: -1px 2px 3px #ffffff5e;
+    text-decoration: none;
+}
+.projeto-anterior:hover {
+    border: 1px solid black;
+    color: #14c581;
+}

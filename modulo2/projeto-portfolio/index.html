@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>Portfólio</title>
+</head>
+<body>
+<!--Barra de menu-->
+<nav class="menu-nav">
+    <div class="menu-links">
+        <a href="#">Inicio</a>
+        <a href="#aprendendo">linguagens</a>
+        <a href="#galeria">Projetos</a>
+        <a href="#habilidades">Habilidades</a>
+        <a href="#contatos">Contato</a>
+    </div>
+    <div class="menu-img">
+        <img src="imagens/pixane.jpg">   
+    </div>
+</nav>
+<div class="inicio" id="home">
+    <h1>Diego Rios Santos</h1>
+    <h2>Desenvolvedor Web Full-Stack</h2>
+    <hr>
+    <!--<div class="inicio-img"> <img src="imagens/pixane.jpg"> </div>
+    <p>Nunca tenha certeza de nada,porque a saboria começa com a dúvida.</p> -->
+</div>
+<!-- abaixo esta sobre mim-->
+<header  id="head-home">
+    <div class="info">
+        <div class="info-apresentacao">
+            <h1>Um pouco sobre mim</h1>
+            <p> Olá, me chamo Diego ,tenho 23 anos, atualmente cursando programação na Labenu no turno
+                da noite, e durante o dia trabalho em uma loja  de produtos naturais chamada
+                Empório Natural na função de vendedor e entregador {e todo o resto que a empresa precisa também :) }.
+            </p>
+            <br>
+            <p> Sou uma pessoa bastante dedicada quando trata-se de responsabilidades e obrigações, e encontrei na
+                programação não somente um salario bom, mas também uma forma de trabalhar fazendo uma coisa que gosto,
+                assim podendo ter um objetivo de vida interessante a se seguir 
+            </p>
+        </div> 
+        <!-- abaixo div da foto-->
+        <div class="info-foto">
+            <img src="imagens/eu.jpg" alt="Minha foto">
+        </div>               
+    </div>
+    <!-- abaixo div que fala sobre o ensino e emprego-->
+    <div class="ensino-emprego">
+        <div class="info-ensino">
+            <h2>instituições de ensino</h2>
+            <br>
+            <h3>Ensino médio</h3>
+            <p>Colégio Estadual Edna Moreira Pinto Daltro</p>
+            <br>
+            <h3>Cursos</h3>
+            <a class="labenu" href="https://www.labenu.com.br/" target="_blanck">Labenu_</a>
+            <p class="lab">Educação que reinventa</p>
+            <div class="lab-log">
+                <img src="imagens/labenu-logo-simb.png">
+            </div>
+        </div>
+        <div class="empregadores">
+            <h2>Empregradores Prévios</h2>
+            <table>
+                <tr class="tabela-info">
+                    <th>Nome da empresa:</th>
+                    <th>Data que entrou:</th>
+                    <th>função:</th>
+                </tr>
+                <tr>
+                    <td>Empório Natural</td>
+                    <td>01/10/2015</td>
+                    <td>Vendedor</td>
+                </tr>
+            </table>
+            <br>
+            <p>
+            Falando um pouco sobre minhas funções na Empório, eu meio que faço tudo que é preciso,
+            desde limpeza até entrega do produto. Particularmente considero um ambiente bem confortavel.
+            </p>
+        </div>
+    </div>
+</header>
+<section class="linguagens" id="aprendendo">
+    <!--Coloquei essa area so pra aumentar o conteudo da pagina-->
+    <h1>Aprendizado na Labenu</h1>
+    <div class="aprendendo">
+        <div>
+            <h2>Front-end</h2>
+            <div class="frontend">
+                <div> <img src="imagens/Frontend-img/html.png" alt="HTML"> </div>
+                <div> <img src="imagens/Frontend-img/css.png" alt="CSS"> </div>
+                <div> <img src="imagens/Frontend-img/javascript.png" alt="JavaScript"> </div>
+                <div> <img src="imagens/Frontend-img/jest.png" alt="Jest"> </div>
+                <div> <img src="imagens/Frontend-img/react.png" alt="React"> </div>
+            </div>
+        </div>
+        <div class="aprendendo-div"> <img src="imagens/479959.jpg"> </div>
+        <div>
+            <h2>Back-end</h2>
+            <div class="backend">
+                <div> <img src="imagens/Backend-img/node.png" alt="Node JS"> </div>
+                <div> <img src="imagens/Backend-img/typescript.png" alt="TypeScript"> </div>
+                <div> <img src="imagens/Backend-img/mysql.png" alt="MySQL"> </div>
+                <div> <img src="imagens/Backend-img/aws.png" alt="AWS"> </div>
+                <div> <img src="imagens/Backend-img/firebase.png" alt="Firebase"> </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--abaixo a galeria de projetos-->
+<section class="galeria-pro" id="galeria">
+    <h1>Galeria de Projetos</h1>
+    <div class="lista-projetos">
+        <div class="projeto">
+            <h2>Introdução ao JavaScript</h2>
+            <a href="galeria-projetos/Introdução ao javascript/introducao.html">
+                <div class="intro-js">
+                    <div class="intro-js-img">
+                        <img src="imagens/javascript-1.jpg" alt="introdução ao Js">
+                    </div>
+                </div>
+            </a>
+            <p>Primeiro Projeto com JavaScript</p>
+        </div>
+        <div class="projeto">
+            <h2>Black-jack</h2>
+            <a href="galeria-projetos/Blackjack/blackjack.html">
+                <div class="intro-js">
+                    <div class="intro-js-img">
+                        <img src="imagens/Blackjack.jpg" alt="introdução ao Js">
+                    </div>
+                </div>
+            </a>
+            <p>Jogavel no console do navegador</p>
+        </div><div class="projeto">
+            <h2>Revisão de JavaScript</h2>
+            <a href="galeria-projetos/Revisao-js/revisao-js.html">
+                <div class="intro-js">
+                    <div class="intro-js-img">
+                        <img src="imagens/revisaojs.jpg" alt="introdução ao Js">
+                    </div>
+                </div>
+            </a>
+            <p>Conclusão do que aprende até o momento do projeto</p>
+        </div>
+    </div>
+</section>
+<!--Abaixo lista de habilidades-->
+<section class="sobre-habilidade" id="habilidades">
+    <h1>Habilidades</h1>
+    <div class="habilidade">
+        <div class="tecnica">
+            <h2>Habilidades Tecnicas</h2>
+            <ul>
+                <li>HTMl</li>
+                <p>O basico, ja fiz varias aplicações utilizando html</p>
+                <li>CSS</li>
+                <p>O basico, ja fiz varias aplicações utilizando css</p>
+                <li>JavaScript</li>
+                <p>Estou engatinhando no javascript, e ja fiz alguns projetos ultilizando a linguagem</p>
+            </ul>
+        </div>
+        <div class="comportamental">
+            <h2>Habilidades Comportamentais</h2>
+            <ul>
+                <li>Empatia:</li>
+                <p>Sempre tento olhar o lado das pessoa</p>
+                <li>Paciência:</li>
+                <p>Sempre fui bastante paciente com quase tudo ao meu redor</p>
+                <li>Atenção:</li>
+                <p>Para  me adptar ao ambiente ou uma pessoa caso necessario
+                </p>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section class="sobre-form">
+    <h2>Entre em contato</h2>
+    <form action="#">
+        <label for="name">Nome</label><br>
+        <input type="text" name="nome" id="nome">
+        <br>
+        <label for="email">Email</label><br>
+        <input type="email" name="email" id="email">
+        <br>
+        <label for="textarea">Deixe uma mensagem</label><br>
+        <textarea name="area-texto" id="area-texto" cols="30" rows="5"></textarea>
+        <br>
+        <input class="botao" type="submit" name="enviar" id="enviar">
+    </form>    
+</section>
+<hr>
+<footer class="final" id="contatos">
+    <h2>Redes Sociais</h2>
+    <p>tefelefone / celuluar</p>
+    <p>+55-(74)-99132-3720</p>
+    <ul>
+        <li>
+             <a href="https://br.linkedin.com/?trk=guest_homepage-basic_nav-header-logo" target="_blanck">
+                <img src="imagens/img-redes/logotipo-do-linkedin.png" alt="Linkedin">
+                Linkedin
+             </a>
+        </li>
+        <li>
+            <a href="https://github.com/future4code/barros-Diego-Santos" target="_blanck">
+                <img src="imagens/img-redes/github.png" alt="GitHub">
+                GitHub
+            </a>
+        </li>
+        <li> 
+            <a href="https://www.facebook.com/" target="_blanck">
+                <img src="imagens/img-redes/facebook.png" alt="Facebook">
+                Facebook
+            </a> 
+        </li>
+        <li> 
+            <a href="https://www.instagram.com/" target="_blanck">
+                <img src="imagens/img-redes/instagram.png" alt="Instagram">
+                Instagram
+            </a> 
+        </li>
+        <li> 
+            <a href="https://web.whatsapp.com/" target="_blanck">
+                <img src="imagens/img-redes/whatsapp.png" alt="Whatsapp"> 
+                Whatsapp
+            </a>
+        </li>
+    </ul>
+    <p class="copyright">copyright © | Labenu/Barros/Diego Rios</p>
+</footer>
+</body>
+</html>
