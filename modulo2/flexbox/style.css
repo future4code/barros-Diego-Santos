@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    bottom: 0;
+    box-sizing: border-box;
+    object-fit: cover;
+    font-family: arial;
+}
+/* parte iniciar do site, nome e login */
+header {
+    background-color: mediumvioletred;
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 20px;
+    font-weight: bold;
+}
+header .foto-bolo img {
+    width: 20px;
+    margin-right: 12px;
+}
+
+
+
+
+section {
+    display: flex;
+}
+/* abaixo parte do menu */
+section nav {
+    background-color: #f2d0e0 ;
+    font-size: 15px;
+    
+    display: flex;
+    flex-direction: column;
+    min-width: 330px ;  
+}
+section nav div {
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    position: relative;
+}
+section nav div img {
+    width: 20px;
+    margin-right: 20px;
+}
+section nav div p {
+    margin-top: 3px;
+}
+.posicionar {   
+    position: absolute;
+    right: 10px;    
+}
+
+/* abaixo parte do espositorio de bolos */
+section main {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
+}
+section main div {
+    width: 300px;
+    min-height: 400px;
+    box-shadow: 3px 3px 3px darkgray;
+    margin: 10px;
+    text-align: center;
+}
+section main div img {
+    width: 100%;
+    min-height: 350px;
+}
+section main div h3 {
+    margin: 10px 0;
+}
+
+/* abaixo footer */
+footer {
+    background-color: mediumvioletred;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 17px;
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    font-weight: bold;
+}
+footer img {
+    max-width: 30px;
+    border-radius: 100%;
+    margin-left: 10px;
+}

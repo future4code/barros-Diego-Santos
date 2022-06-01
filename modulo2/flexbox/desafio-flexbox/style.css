@@ -1,0 +1,80 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-size: 25px;
+    color: white;
+}
+
+#top-container {
+    display: flex;
+    text-align: center;
+}
+.green-background {
+    background-color: green;
+    height: 7.5vh;
+    width: 30%;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+}
+
+.yellow-background {
+    background-color: yellow;
+    height: 7.5vh;
+    width: 70%;
+    display: flex;;
+    justify-content: center;
+    align-items: center;
+}
+
+.pink-background {
+    background-color: fuchsia;
+    height: 70vh;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#middle-container {
+    display: flex;
+    justify-content: space-between;
+    height: 15vh;
+    text-align: center;
+}
+.blue-background {
+    background-color: blue;
+    height: 15vh;
+    width: 40vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.red-background {
+    background-color: red;
+    width: 35vw;
+    height: 7.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightgreen-background {
+    background-color: lightgreen;
+    width: 35vw;
+    height: 7.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.purple-background {
+    background-color: purple;
+    height: 7.5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
