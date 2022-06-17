@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.container {
+    display: grid;
+    grid-template-rows: 100px 3fr 100px;
+    position: relative;
+}
+
+header.inicio {
+    background-color: #da7b00;
+    display: grid;
+    grid-template-columns: 80vw 20vw;
+    align-items: center;
+    height: 100px;
+
+    font-size: 25px;
+}
+header.inicio h2 {
+    margin-left: 20px;
+}
+header.inicio input {
+    font-size: 20px;
+}
+
+
+
+section.videos {
+    display: grid;
+    grid-template-columns: repeat(5, 320px);
+    gap: 15px;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+section.videos div {
+    border: 1px solid green;
+    height: 380px;
+    display: grid;
+    color: black ;
+}
+section.videos img {
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+}
+section.videos div p {
+    margin-left: 20px;
+}
+
+footer {
+    background-color: #050505d3;
+    color: white;
+    font-size: 45px;
+    position: absolute;
+    display: grid;
+    align-items: center;
+    height: 80px;
+    width: 100vw;
+    bottom: 0;
+}
+footer p {
+    margin-left: 20px;
+}
+
+
+
+
+main.video {
+    margin: 40px auto 0;
+    width: 70vw;
+    border: 1px solid #0000000e;
+    height: 600px;
+    padding: 30px;
+}
+main.video video {
+    margin-top: 20px;
+    width: 100%;
+    height: 95%;
+    border: 1px solid #00000021;
+}
+footer.outra-pagina {
+    position: absolute;
+}
