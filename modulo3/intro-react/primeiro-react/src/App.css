@@ -1,0 +1,42 @@
+.container-central{
+  text-align: center;
+}
+
+.foto-perfil{
+  height: 20vmin;
+  pointer-events: none;
+  border-radius: 30px;
+}
+
+
+
+.App-header {
+  background-image: linear-gradient(to right, #10022bcc, #000000ec,#060118);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.botao {
+  color: #fff;
+  background-image: linear-gradient(to right, #060118, #000000ec,#060118);
+  font-size: 1.9vmin;
+  width: 15vmin;
+  height: 5vmin;
+  border-radius: 5px;
+  box-shadow: 0px 1px 3px #000;
+}
+.botao:hover {
+  box-shadow: 1px 1px 4px #ffffff48;
+}
+.botao:active {
+  color: #ff7b00;
+}
+
+
+
