@@ -1,0 +1,19 @@
+.image-button-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 50px;
+    width: 200px;
+    padding: 15px 30px;
+    margin: 10px auto;
+
+    box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.733);
+}
+.image-button-container:hover {
+    border: 2px solid;
+}
+
+.image-button-container > img {
+    width: 30px;
+    margin-right: 10px;
+}
