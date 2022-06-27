@@ -1,0 +1,38 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.page-section-container {
+  width: 40vw;
+  margin: 10px 0;
+}
+
+.page-section-container > h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+
+  text-shadow: 1px 1px 2px rgb(28, 51, 158);
+}
+
+
+@media (max-width:400px) {
+  .App {
+    display: block;
+    margin: 0 12%;
+  }
+}
