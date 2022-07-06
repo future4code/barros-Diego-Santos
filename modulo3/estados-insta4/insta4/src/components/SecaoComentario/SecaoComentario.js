@@ -1,17 +1,17 @@
 import React from 'react'
-import './style.css'
+import { CommentContainer,InputComentario } from '../../style'
 
 
 export function SecaoComentario(props) {
 	
 	return (
-		<div className='CommentContainer'>
-			<input className='InputComentario'
+		<CommentContainer>
+			<InputComentario
 				placeholder={'Comentário'}
 				value={props.inputText}
 				onChange={props.onChangeComentario}
 			/>
 			<button onClick={props.aoEnviar}>Enviar</button>
-		</div>
+		</CommentContainer>
 	)
 }
