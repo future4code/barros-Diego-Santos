@@ -63,12 +63,16 @@ export const Container = styled.div `
             background-color: #c0c0c068;
             width: 15%;
             font-weight: 600;
-    } ${Botao}:active{
+        } ${Botao}:active{
             background-color: #c0c0c0;
             transition: 100ms;
-    }
+        }
     }
 `
+export const Mensagens = styled.div `
+
+`
+
 /*
 ${ContainerInputs}{
     display: grid;

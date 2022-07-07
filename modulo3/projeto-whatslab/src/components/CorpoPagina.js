@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { Container } from '../style'
 import { ContainerInputs, TagFormulario, AreaNome, AreaTexto, Botao } from '../style'
 
+import { AreaMensagem } from './AreaMensagem'
+
 
 
 
@@ -19,12 +21,15 @@ export const CorpoPagina = () => {
     const EnviarMensagem = (e) => {
         let batata = inputNome + ": " + inputMensagem
         return batata
-        console.log(inputNome + ": " + inputMensagem)
+        //console.log(inputNome + ": " + inputMensagem)
     };
+
+    
+
 
     return (    
         <Container>
-            <EnviarMensagem/>
+            <AreaMensagem/>
             <ContainerInputs>
                 <TagFormulario>
                     <AreaNome  value={inputNome} onChange={handleInputNome}/> 
