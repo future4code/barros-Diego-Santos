@@ -1,11 +1,12 @@
 import React from 'react';
 import Post from './components/Post/Post';
-import './style.css'
+
+import { MainContainer } from './style.js'
 
 
 function App() {
 return(
-  <div className='MainContainer'>
+  <MainContainer>
           <Post
             nomeUsuario={'paulinha'}
             fotoUsuario={'https://picsum.photos/50/50'}
@@ -25,8 +26,13 @@ return(
             nomeUsuario={'Fernanda'}
             fotoUsuario={'https://picsum.photos/50/49'}
             fotoPost={'https://picsum.photos/200/190'}
+          /> 
+          <Post
+          nomeUsuario={'Rafael'}
+          fotoUsuario={'https://picsum.photos/50/47'}
+          fotoPost={'https://picsum.photos/200/192'} 
           />
-  </div>
+  </MainContainer>
 )
 
 }
