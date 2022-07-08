@@ -6,6 +6,25 @@ export const MainContainer = styled.div `
     justify-content: center;
     flex-direction: column;
     align-items: center;
+
+    .FormAddPost {
+        padding: 10px;
+    }
+    .FormAddPost input {
+        font-size: 17px;
+        padding: 5px;
+        margin: 0 5px;
+        border-radius: 5px;
+    }
+    .FormAddPost button {
+        font-size: 17px;
+        padding: 5px;
+        background-color: #00000079;
+        border-radius: 5px;
+    }
+    .FormAddPost  button:hover {
+            box-shadow: 0 2px 4px #000;
+    }
 `
 // ---------------/ / --------------  -----///
 
