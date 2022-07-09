@@ -18,10 +18,10 @@ export const Container = styled.div `
     box-shadow: 0px 0px 3px #30302190;
     box-sizing: border-box;
     
-    overflow-y: scroll;
     
+    overflow: auto;
     position: relative;
-
+    // abiaxo css das mensagens do lado direito
     .exibirMsgDir {
         display: flex;
         flex-direction: row-reverse;
@@ -34,17 +34,18 @@ export const Container = styled.div `
     .exibirMsgDir .msgDireita {
         background-color: #DCF8C6;
         padding: 25px 30px;
-        margin-right: 10px;
+        margin: 2px 10px;
         border-radius: 5px;
     }
+    // abiaxo css das mensagens do lado esquerdo
     .exibirMsgEsq {
         display: flex;
         
     }
     .exibirMsgEsq .msgEsquerda {
         
-        padding: 15px 30px;
-        margin: 5px 10px;
+        padding: 10px 25px;
+        margin: 2px 10px;
         border-radius: 5px;
 
         background-color: #f1f1f1;
@@ -58,7 +59,7 @@ export const Container = styled.div `
     ${ContainerInputs} {
         max-width: 960px;
         position: absolute;
-        bottom: 30px;
+        bottom: 15px;
         box-sizing: border-box;
         width: 100%;
         left: 0;
@@ -103,33 +104,3 @@ export const Container = styled.div `
         }
     }
 `
-export const MsgEsquerda = styled.div `
-    width: 150px;
-    height: 150px;
-    background-color: blue;
-`
-export const MsgDireita = styled.section `
-    width: 150px;
-    height: 150px;
-    background-color: pink;
-`
-
-/*
-${ContainerInputs}{
-    display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
-
-    // css do input de nome
-    ${AreaNome}{
-        
-    }
-    //css do input de texto
-    ${AreaTexto}{
-
-    }
-    //css do botao
-    ${Botao}{
-
-    }
-}
-*/

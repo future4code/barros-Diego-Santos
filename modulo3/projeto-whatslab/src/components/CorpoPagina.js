@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Container } from '../style'
 import { ContainerInputs, TagFormulario, AreaNome, AreaTexto, Botao } from '../style'
-import { MsgEsquerda, MsgDireita } from '../style'
+
 
 
 
@@ -28,11 +28,20 @@ export const CorpoPagina = () => {
         setInputNome('')
     };
 
-    const testando = msg.map( (conteudo,index) => {
-        if(conteudo.nome == 'eu'){
+    const deletMsg = (indexDel,) => {
+        const msgDelet = msg.filter( (item,index) => {
+            return index !== indexDel
+        })
+        
+        setMsg(msgDelet)
+        console.log("removeu")
+    }
+
+    const areaMsg = msg.map( (conteudo,index) => {
+        if(conteudo.nome === 'eu'){
             return (
-                <div className='exibirMsgDir' key={index}>  
-                    <p className='msgDireita'>{conteudo.mensagem} </p> 
+                <div className='exibirMsgDir' key={index} onDoubleClick={ () => deletMsg(index)}>  
+                    <p className='msgDireita'> {conteudo.mensagem} </p> 
                 </div>
             )
         } else if(conteudo.nome === ''){
@@ -41,10 +50,11 @@ export const CorpoPagina = () => {
             )
         } else if(conteudo.nome !== 'eu') {
             return (
-                <div className='exibirMsgEsq' key={index}>
+                <div className='exibirMsgEsq' key={index} onDoubleClick={ () => deletMsg(index)} >
                     <p className='msgEsquerda'>
                         <span className='brackRow'>{conteudo.nome}</span>
-                        {conteudo.mensagem}</p>
+                        {conteudo.mensagem}
+                    </p>
                 </div>
             )
         }
@@ -52,7 +62,7 @@ export const CorpoPagina = () => {
 
     return (    
         <Container>
-            {testando}
+            {areaMsg}
             <ContainerInputs>
                 <TagFormulario>
                     <AreaNome  value={inputNome} onChange={ (e) => setInputNome(e.target.value) }/> 
