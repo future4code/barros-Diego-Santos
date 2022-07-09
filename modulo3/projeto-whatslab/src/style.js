@@ -1,39 +1,73 @@
 import styled from 'styled-components'
 
 
-
-
-
 // toda estilizição dessas variaveis estaram na Variavel Container 
 export const AreaNome = styled.input ``
 export const AreaTexto = styled.input ``
 export const Botao = styled.button``
 export const TagFormulario = styled.form ``
 export const ContainerInputs = styled.div ``
-export const MensagemFlutuante = styled.p ``
 
 export const Container = styled.div `
     max-width: 960px;
     height: 100vh;
     margin: 0 auto;
-    background-color: #e9e7dfd2;
+    background-color: #ECE5DD;
     border-top: 5px solid #00000019;
     border-bottom: 0;
     box-shadow: 0px 0px 3px #30302190;
     box-sizing: border-box;
     
+    overflow-y: scroll;
     
     position: relative;
-    ${ContainerInputs} {
+
+    .exibirMsgDir {
         display: flex;
-        justify-content: space-around;
-        position: absolute;
-        bottom: 10px;
+        flex-direction: row-reverse;
+    
         width: 100%;
-        box-sizing: border-box;
+        line-height: 0;
 
-
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .exibirMsgDir .msgDireita {
+        background-color: #DCF8C6;
+        padding: 25px 30px;
+        margin-right: 10px;
+        border-radius: 5px;
+    }
+    .exibirMsgEsq {
+        display: flex;
         
+    }
+    .exibirMsgEsq .msgEsquerda {
+        
+        padding: 15px 30px;
+        margin: 5px 10px;
+        border-radius: 5px;
+
+        background-color: #f1f1f1;
+        line-height: 1.5;
+        .brackRow {
+            display: block;
+            font-weight: bold;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+    }
+    ${ContainerInputs} {
+        max-width: 960px;
+        position: absolute;
+        bottom: 30px;
+        box-sizing: border-box;
+        width: 100%;
+        left: 0;
+        
+        ${TagFormulario} {
+            width: 100%;
+            display: flex;
+            justify-content: space-evenly;
+        }
         // esse css aqui aplica uma configuraçao em ambos os inputs e o botao
         input,button {
             padding: 7px 6px;
@@ -49,7 +83,7 @@ export const Container = styled.div `
         }
          //ABAIXO - css do input de nome
         ${AreaNome}{
-            max-width: 20%;
+            width: 20%;
             background-color: #fff;
             font-weight: bold;
         }
@@ -69,8 +103,15 @@ export const Container = styled.div `
         }
     }
 `
-export const Mensagens = styled.div `
-
+export const MsgEsquerda = styled.div `
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+`
+export const MsgDireita = styled.section `
+    width: 150px;
+    height: 150px;
+    background-color: pink;
 `
 
 /*

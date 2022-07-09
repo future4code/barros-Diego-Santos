@@ -1,41 +1,64 @@
 import React, { useState } from 'react'
 import { Container } from '../style'
 import { ContainerInputs, TagFormulario, AreaNome, AreaTexto, Botao } from '../style'
+import { MsgEsquerda, MsgDireita } from '../style'
 
-import { AreaMensagem } from './AreaMensagem'
 
 
 
 
 export const CorpoPagina = () => {
-    const [inputNome, setInputNome] = useState('')
-    const handleInputNome = (e) => {
-        setInputNome(e.target.value);
-    };
 
+    const [msg, setMsg] = useState ([
+        { nome:'', mensagem: '' },
+      ]
+    )
+
+    const [inputNome, setInputNome] = useState('')
     const [inputMensagem, setInputMensagem] = useState('')
-    const handleInputMensagem = (e) => {
-        setInputMensagem(e.target.value);
-    };
     
     const EnviarMensagem = (e) => {
-        let batata = inputNome + ": " + inputMensagem
-        return batata
-        //console.log(inputNome + ": " + inputMensagem)
+        e.preventDefault()
+
+        const novasMsg = [...msg, {nome: inputNome, mensagem: inputMensagem}]
+        setMsg(novasMsg)
+
+        console.log(inputNome + ": " + inputMensagem)
+        setInputMensagem('')
+        setInputNome('')
     };
 
-    
-
+    const testando = msg.map( (conteudo,index) => {
+        if(conteudo.nome == 'eu'){
+            return (
+                <div className='exibirMsgDir' key={index}>  
+                    <p className='msgDireita'>{conteudo.mensagem} </p> 
+                </div>
+            )
+        } else if(conteudo.nome === ''){
+            return (
+                <div className='vazio' key={index}/>
+            )
+        } else if(conteudo.nome !== 'eu') {
+            return (
+                <div className='exibirMsgEsq' key={index}>
+                    <p className='msgEsquerda'>
+                        <span className='brackRow'>{conteudo.nome}</span>
+                        {conteudo.mensagem}</p>
+                </div>
+            )
+        }
+    })
 
     return (    
         <Container>
-            <AreaMensagem/>
+            {testando}
             <ContainerInputs>
                 <TagFormulario>
-                    <AreaNome  value={inputNome} onChange={handleInputNome}/> 
-                    <AreaTexto placeholder='Mensagem' value={inputMensagem} onChange={handleInputMensagem}/>
+                    <AreaNome  value={inputNome} onChange={ (e) => setInputNome(e.target.value) }/> 
+                    <AreaTexto placeholder='Mensagem' value={inputMensagem} onChange={ (e) => setInputMensagem(e.target.value) }/>
+                    <Botao onClick={EnviarMensagem}>Enviar</Botao>
                 </TagFormulario>
-                <Botao onClick={EnviarMensagem}>Enviar</Botao>
             </ContainerInputs>
         </Container>
         
