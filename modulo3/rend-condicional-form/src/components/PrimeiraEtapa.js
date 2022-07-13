@@ -5,16 +5,8 @@ import { Selecionar,Opcoes } from "../style";
 
 
 
-export const  PrimeiraEtapa = ({arrayDiOpcao}) => {
-    // const [selecaoOpcoes, setSelecaoOpcoes] = useState(0)
-    // const selectOpcao = () => {
-
-    // } 
-     const mostrarOpcoes = arrayDiOpcao.map( (ListaOp,index) => {
-        return (
-            <Opcoes value={index}>{ListaOp}</Opcoes>
-        )
-    } )
+export const  PrimeiraEtapa = () => {
+    
 
     return (
         <>
@@ -37,12 +29,11 @@ export const  PrimeiraEtapa = ({arrayDiOpcao}) => {
                 <DivForms>
                     <Etiqueta>Grau de Escolaridade</Etiqueta>
                     <Selecionar >
-                        {/* <Opcoes defaultValue="0" >Escolha uma Opção</Opcoes>
+                        <Opcoes defaultValue="0" >Escolha uma Opção</Opcoes>
                         <Opcoes value="1">Ensino Médio Incompleto</Opcoes>
                         <Opcoes value="2" >Ensino Médio Completo</Opcoes>
                         <Opcoes value="3">Ensino Superior Incompleto</Opcoes>
-                        <Opcoes value="4">Ensino Superior Completo</Opcoes> */}
-                        {/* {mostrarOpcoes} */}
+                        <Opcoes value="4">Ensino Superior Completo</Opcoes>   
                     </Selecionar>
                 </DivForms> 
             </Formulario>

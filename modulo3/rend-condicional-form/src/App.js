@@ -6,24 +6,21 @@ import { TerceiraEtapa } from "./components/TerceiraEtapa";
 import { Container } from "./style";
 
 function App() {
-  
-  const [selectOpcao, setSelecaoOpcoes] = useState([
-    "Escolha uma Opção", "Ensino Médio Incompleto",
-    "Ensino Médio Completo", "Ensino Superior Incompleto", "Ensino Superior Completo"
-  ])
 
   const [renderForm, setRenderForm] = useState(PrimeiraEtapa)
+  const [botao, setBotao] = useState(1)
   const trocarForm = () => {
-    if (BtnConfirm) {
+    if (botao === 1) {
+      setBotao(+ 1)
       setRenderForm(SegundaEtapa)
-    } else if (BtnConfirm) {
+    } if (botao === 2 ) {
       setRenderForm(TerceiraEtapa)
     }
     
   }
-  console.log(selectOpcao)
+
   return (
-    <Container arrayDiOpcao={selectOpcao}>
+    <Container>
       {renderForm}
       {/* <TerceiraEtapa/> */}
       <BtnConfirm onClick={trocarForm}>Proxima Etapa</BtnConfirm>
