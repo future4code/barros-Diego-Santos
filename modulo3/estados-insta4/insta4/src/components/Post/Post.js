@@ -4,6 +4,7 @@ import { PostContainer, PostFooter, PostHeader, UserPhoto, PostPhoto } from '../
 import {IconeComContador} from '../IconeComContador/IconeComContador'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
 
+
 import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
@@ -29,10 +30,8 @@ function Post(props){
     } else if (numeroCurtidas >= 2){       // a parte de curtir e tirar o curtir
       iconeCurtida = iconeCoracaoBranco
       setNumeroCurtidas(numeroCurtidas-2)
-      console.log('tirou o Curtiu!')
     } else {
       iconeCurtida = iconeCoracaoPreto
-      console.log('Curtiu!')
     }
 
   // parte comentarios   -------------------------------
@@ -51,7 +50,7 @@ function Post(props){
   const aoEnviarComentario = () => {
     setComentando(false)
     setNumeroComentarios(numeroComentarios + 1)
-    console.log(inputText)
+    console.log(props.nomeUsuario + " Digitou " + inputText) 
   }
 
   let componenteComentario
@@ -61,101 +60,36 @@ function Post(props){
         onChangeComentario={handleInputText} 
       />
     } 
-  
-  
-  const Arraypost = [ // essa linha comentada abaixo foi a primeira forma que fiz, ai depois fiz usando o props para ver se funcionaria e funcionou :)
-    // { nomeUsuario: 'paulinha',
-    //   fotoUsuario: 'https://picsum.photos/50/50',
-    //   fotoPost: 'https://picsum.photos/200/200' 
-    // },
-
-    // {
-    // nomeUsuario: 'Francisco',
-    // fotoUsuario: 'https://picsum.photos/50/51',
-    // fotoPost: 'https://picsum.photos/200/180'
-    // },
-      
-    // {      
-    //   nomeUsuario: 'Joseph',
-    //   fotoUsuario: 'https://picsum.photos/50/48',
-    //   fotoPost: 'https://picsum.photos/200/170'
-    // },      
-          
-    // {
-    //   nomeUsuario: 'Fernanda',
-    //   fotoUsuario: 'https://picsum.photos/50/49',
-    //   fotoPost: 'https://picsum.photos/200/190'
-    // },
-    {
-      nomeUsuario: props.nomeUsuario,
-      fotoUsuario: props.fotoUsuario,
-      fotoPost: props.fotoPost
-    }
-  ] 
-
-    const AreaPost = Arraypost.map( (conteudo, index) => {
-      return (
-        <PostContainer key={index}>
-          <PostHeader>
-            <UserPhoto src={conteudo.fotoUsuario} alt={'Imagem do usuario'} key={'FotoUsuar'}/>
-            <p key={'NomeUsuar'}>{conteudo.nomeUsuario}</p>
-          </PostHeader>
-          <PostPhoto src={conteudo.fotoPost} alt={'imagem do post'} key={'ImgPost'}/>
-
-          <PostFooter>
-            <IconeComContador
-              icone={iconeCurtida}
-              onClickIcone={onClickCurtida}
-              valorContador={numeroCurtidas}
-            />
-
-            <IconeComContador
-              icone={iconeComentario}
-              onClickIcone={onClickComentario}
-              valorContador={numeroComentarios}
-          />
-          <IconeComContador
-              icone={iconeCompartilhar}  
-          />
-          </PostFooter>
-          {componenteComentario}
-        </PostContainer>  
-      )
-    })
-    console.log(Arraypost) // no enuciado fala que tem que por um console.log nos post mas nao entendi bem oque quiseram dizer
-
 
   // ----------------------------------------------------------------
   return(
     <>
-      {AreaPost}
+      <PostContainer>
+        <PostHeader>
+          <UserPhoto src={props.fotoUsuario} alt={'Imagem do usuario'} />
+          <p>{props.nomeUsuario}</p>
+        </PostHeader>
+        <PostPhoto src={props.fotoPost} alt={'imagem do post'} />
+
+        <PostFooter>
+          <IconeComContador
+            icone={iconeCurtida}
+            onClickIcone={onClickCurtida}
+            valorContador={numeroCurtidas}
+          />
+
+          <IconeComContador
+            icone={iconeComentario}
+            onClickIcone={onClickComentario}
+            valorContador={numeroComentarios}
+          />
+          <IconeComContador
+            icone={iconeCompartilhar}  
+          />
+        </PostFooter>
+          {componenteComentario}
+      </PostContainer>  
     </>
-    // <div className = 'PostContainer'>
-    //   <div className = 'PostHeader'>
-    //     <img className = 'UserPhoto' src={props.fotoUsuario} alt={'Imagem do usuario'}/>
-    //     <p>{props.nomeUsuario}</p>
-    //   </div>
-
-    //   <img className = 'PostPhoto'src={props.fotoPost} alt={'Imagem do post'}/>
-
-    //   * <div className = 'PostFooter'>
-    //     <IconeComContador
-    //       icone={iconeCurtida}
-    //       onClickIcone={onClickCurtida}
-    //       valorContador={numeroCurtidas}
-    //     />
-
-    //     <IconeComContador
-    //       icone={iconeComentario}
-    //       onClickIcone={onClickComentario}
-    //       valorContador={numeroComentarios}
-    //     />
-    //     <IconeComContador
-    //       icone={iconeCompartilhar}  
-    //     />
-    //   </div>
-    //   {componenteComentario}*
-    // </div>
   )
 }
 
