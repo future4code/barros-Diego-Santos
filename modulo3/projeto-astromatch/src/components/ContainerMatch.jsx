@@ -1,32 +1,33 @@
 import React from "react";
 
-import iconeVoltar from "./imagens/desfazer.svg"
+import imgTriste from "./imagens/sad.webp"
 
-import { MatchContainer, MatchPerfil ,MatchPhoto, MatchInfo, Botao, Header } from "../style";
+import { MatchContainer, MatchPerfil ,MatchPhoto, MatchInfo, Header, ListaMatchVazia } from "../style";
 
 
 
 export const ContainerMatch = ( { match, voltarTela} ) => {
 
-    const renderMatchList = match.map( (match) => {
-           return(
-               <MatchPerfil key={match.id}>
-                   <MatchPhoto  src={match.photo} />
-                   <MatchInfo>{match.name}</MatchInfo>
-                   <MatchInfo>{match.age} anos</MatchInfo>
-               </MatchPerfil>
-           ) 
-    })
 
-    
+    const listaMatch = match.map( (match) => {
+            return(
+                <MatchPerfil key={match.id}>
+                    <MatchPhoto  src={match.photo} />
+                    <MatchInfo>{match.name}</MatchInfo>
+                    <MatchInfo>{match.age} anos</MatchInfo>
+                </MatchPerfil>
+            ) 
+    });
 
     return(
         <MatchContainer>
-            <Header>
-                <button onClick={ () => voltarTela()}> <img src={iconeVoltar}/> </button>
-                <h2> <span>Astro</span><span>match</span> </h2>
-            </Header>
-            {renderMatchList}
+            {match.length >= 1 ? 
+                listaMatch 
+                :
+                <ListaMatchVazia imgTriste={imgTriste}>
+                    <h1>Lista vazia 💔</h1>
+                </ListaMatchVazia>
+            }
         </MatchContainer>
     )
 }

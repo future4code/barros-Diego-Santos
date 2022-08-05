@@ -7,9 +7,17 @@ export const ContainerCentral = styled.div `
     margin: 5% auto 0;
     box-shadow: 0 4px 8px #000;
     width: 400px;
-    background-image: url(https://i.pinimg.com/222x/17/f1/34/17f134b1d754631e064edb92164f0d2a.jpg);
+    background-image: url(https://dpsmiles.net/profilbilder/38/herunterladen);
     border-radius: 20px;
     padding: 10px;
+    
+    @media (max-width: 600px){
+      margin: 0 auto ;
+      min-height: 100vh;
+      border-radius:0;
+      width: 100vw;
+      padding: 0;
+    }
 `
 
 // Todo CSS abaixo é do component CardPessoa ---///
@@ -21,6 +29,7 @@ export const ContainerImg = styled.div `
     box-shadow: 1px 3px 5px #000;
     position: relative;
     border-radius: 10px;
+    background-color: #444;
 `
 export const ImgBackGround = styled.img `
     /* background-image: url( ${ (props) => props.pegarImg });  */
@@ -65,41 +74,77 @@ export const TextProfile = styled.div `
 
 
 /// Abaixo CSS do component ContainerBotao ///// --- //////////////////
+export const Botao = styled.button `
+    height: 80px ;
+    width: 80px;
+    border: 3px solid #fff;
+    border-radius: 100%;
+    color: #fff;
+    background-color: #000;
+    cursor: pointer;
+    :hover {
+        transform: scale(1.2)
+    }
+`
 export const DivBotao = styled.div `
     width: 100%;
-    height: 80px;
+    height: 85px;
     display: flex;
     justify-content: space-evenly;
     box-sizing: border-box;
-    background-color: #444;
-`
-
-export const Botao = styled.button `
-    
+    background-color: transparent;
+    border-radius: 5px;
+    align-items: center;
+    margin: 10px 0;
+    ${Botao}:nth-child(1){
+        
+        font-size: 40px;
+        color: #fff;
+        :hover{
+            color: red;
+            border: 3px solid red;
+            background-color: transparent;
+            box-shadow: 1px 2px 3px #000;
+        }   
+    }
+    ${Botao}:nth-child(2){
+        font-size: 40px;
+        :hover {
+            border:5px solid black;
+        }
+    }
 `
 ////////////////////// ------------ -----------/  ////// --- /// -/////////////////////////////
 
 /// Abaixo CSS do component ContainerMatch ------------ ////////-//////////-/-/-/-/-/-/
-
 export const MatchContainer = styled.div `
     width: 100%;
+    
     display: flex;
     flex-direction: column;
-    
-    background-color: #444;
+    @media (max-width: 500px){
+        overflow-y: scroll;
+        height: 500px;
+    }
 `
+
 export const MatchPerfil = styled.div `
     height: 60px;
     display: flex;
+    width: 80%;
     justify-content: space-between;
     align-items: center;
     box-shadow: 1px 2px 3px #000000;
     border-radius: 10px;
     
-    margin:5px 0;
+    margin:10px auto;
     padding:10px 20px;
     background-color: #fff;
     font-weight: bold;
+    :hover{
+        box-shadow: 1px 3px 3px #000;
+        transform: scale(1.06);
+    }
 `
 export const MatchPhoto = styled.img `
     height: 100%;
@@ -108,9 +153,20 @@ export const MatchPhoto = styled.img `
     border-radius: 50%;
     box-shadow: 0 2px 3px #000;
 `
-export const MatchInfo = styled.p `
-    
+export const MatchInfo = styled.p `  
 `
+export const ListaMatchVazia = styled.div `
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+    background-image: url( ${ (props) => props.imgTriste});
+    background-position: left;
+    object-fit: cover;
+`
+//--------------------------------------------------------------------////
 export const Header = styled.div `
     display: flex;
     height: 60px;
@@ -120,29 +176,51 @@ export const Header = styled.div `
     padding: 0 0 2px;
     box-shadow: 1px 2px 3px #444;
     border-radius: 6px 6px 0;
+    position: relative;
     h2{ 
-        margin-left: 22%;
+        margin: 0 auto;
         span:nth-child(1) {
             color: #66cc66;
         }
         span:nth-child(2) {
-        color: #800080;
+            color: #800080;
         }
     }
     button {
         height: 100%;
-        width: 50px;
+        width: 60px;
         border: none;
         border-radius: 10px 0 10px;
+        cursor: pointer;
         :hover{
                 box-shadow: 1px 2px 3px #800080;
             }
         img {
             height: 100%;
-            width: 100%;
+            width: 90%;
             background: transparent;
         }
         
+    }
+    .btnHeader {
+        border-radius: 0 10px 0px;
+        
+        :hover{
+                box-shadow: -1px 2px 3px #800080;
+            }
+    }
+    .quantidadeMatches{
+        position: absolute;
+        right: 2%;
+        top: 0;
+        font-weight: bold;
+        color: red;
+    }
+    @media (max-width: 600px) {
+        border-radius: 0;
+        .quantidadeMatches{
+            font-size: 14px;
+        }
     }
 `
 
@@ -151,5 +229,49 @@ export const TelaCarregamento = styled.div `
     align-items: center;
     justify-content: center;
     width: 100%;
+    color: #fff;
     height: 400px;
+    div{
+        overflow: hidden;
+        position: relative;
+        ::after{
+            background-color: #000;
+            content: "";
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            animation: textLoad 1s cubic-bezier(0.85, 0, 0.15, 1) forwards;
+        }
+    }
+    @keyframes textLoad {
+        from {
+            transform: translateX(-101%);
+        }
+        to {
+            transform: translatex(101%);
+        }
+    } 
+`
+
+export const BtnDelet = styled.button `
+    display: block;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    margin: 35px auto 2px;
+    border: none;
+    font-size: 20px;
+    background-color: transparent;
+    border-bottom: 2px solid #000;
+    color: #f3f3f3;
+    cursor: pointer;
+   
+    :hover{
+        box-shadow: 1px 2px 2px #000;
+        color: yellow;
+        transform: scale(1.4);
+    }
 `
