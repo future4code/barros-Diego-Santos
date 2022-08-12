@@ -8,8 +8,8 @@ export const LoginPage = () => {
     return(
         <>
             <p>Area de login</p>
-            <button onClick={ () => navigate(-1)}>voltar</button>
-            <button onClick={ () => navigate("/admin/home/page")}>Login</button>
+            <button onClick={ () => navigate("/")}>voltar</button>
+            <button onClick={ () => navigate("/admin/trip/list")}>Login</button>
         </>
         
     )

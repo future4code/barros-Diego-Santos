@@ -7,8 +7,9 @@ export const AdminHomePage = () => {
     const navigate = useNavigate()
     return(
         <>  
-            <button onClick={ () => navigate(-1)}>logout</button>
-            <button onClick={ () => navigate("/trip/list/admin")}>Exibir lista de viagens</button> 
+            <button onClick={ () => navigate("/login")}>logout</button>
+            <button onClick={ () => navigate("/admin/trips/id")}>Ver detalhes da lista</button>
+            <button onClick={ () => navigate("/admin/trips/create")}>Criar novas viagens</button> 
             {/* <button onClick={ () => navigate("/trip")} */}
         </>
     )

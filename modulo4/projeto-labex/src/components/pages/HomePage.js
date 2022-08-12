@@ -52,7 +52,7 @@ export const HomePage = () => {
       <HomePg>
         <Title> Bem vindo ao Labex - Viajando no espaço </Title>
           <DivButton>
-            <ButtonHome onClick={ () => navigate( "/trip/list/not-logged-in" )}>Acesso livre</ButtonHome>
+            <ButtonHome onClick={ () => navigate( "/trip/list" )}>Acesso livre</ButtonHome>
             <ButtonHome onClick={ () => navigate( "/login" )}>Login</ButtonHome>
           </DivButton>
       </HomePg>
