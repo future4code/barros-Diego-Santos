@@ -4,39 +4,58 @@ import { BtnAppliForm, ContainerAppliFormPage, FormAppli, InputAppli, TitleAppli
 
 import { country,url } from "../../constants";
 import { useRequestData } from "../../hoks/useRequestData";
+import { useSubmitData } from "../../hoks/useSubmitData";
+
+
+
 
 export const ApplicationFormPage = () => {
+
   const navigate = useNavigate()
   const [tripName , tripNameIsLoading, errotripName] = useRequestData( `${url}trips` )
-
-
 
   const [ inputName, setInputName] = useState("")
   const [ inputAge, setInputAge] = useState("")
   const [ inputText, setInputText] = useState("")
   const [ inputProfection, setInputProfection] = useState("")
   const [ selectCountry, setSelectCountry] = useState("")
+  const [ selectTripId, setSelectTripId] = useState({})
 
-
-
-  const submitForm = (event) => {
-    event.preventdefault()
+  const bodyAppliForm = {
+    "name": inputName,
+    "age": inputAge,
+    "applicationText": inputText,
+    "profession": inputProfection,
+    "country": selectCountry
+  };
+ 
+  // const [dataSubmitted , dataSubmittedError] = useSubmitData(`${url}trips/${selectTripId}/${bodyAppliForm}`)
+  const SubmitForm = () => {
+    //  useSubmitData(`${url}trips/${selectTripId}/${bodyAppliForm}`)
+     const [dataSubmitted , dataSubmittedError] = useSubmitData(`${url}trips/${selectTripId}/${bodyAppliForm}`)
+    // console.log(dataSubmitted)
+    // console.log(dataSubmittedError)
   }
+  
+
   const namesTrips = tripName.trips && tripName.trips.map( name => {
     return <option key={name.id} value={name.id}> {name.name} </option>
   })
 
-  const Countrys = country.map( (name,index) => {
+  const nameCountry = country.map( (name,index) => {
     return  <option key={index} value={name}> {name}  </option>
   })
+
+  
+  
   
   return (
     <ContainerAppliFormPage>
       <button onClick={ () => navigate("/trip/list")}>Voltar</button>
       <TitleAppliForm>Inscreva-se para uma viagem</TitleAppliForm>
 
-      <FormAppli onSubmit={() => submitForm()}>
-        <select>
+      <FormAppli onSubmit={(e) => { e.preventDefault(); SubmitForm()}}>
+        <select onChange={ e => setSelectTripId(e.target.value)}>
           <option>Selecione uma viagem</option>
           {namesTrips}
         </select>
@@ -70,11 +89,11 @@ export const ApplicationFormPage = () => {
         />
         <select onChange={ event => setSelectCountry(event.target.value)}>
           <option>Selecione um País</option>
-          {Countrys}
+          {nameCountry}
         </select>
-         <BtnAppliForm type="submit">Enviar</BtnAppliForm> 
-        {/* <input type="submit"/> */}
+        <BtnAppliForm  type="submit">Enviar</BtnAppliForm> 
       </FormAppli>
+      
     </ContainerAppliFormPage>
   )
 }

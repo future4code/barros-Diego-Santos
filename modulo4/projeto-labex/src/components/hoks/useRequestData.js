@@ -14,7 +14,6 @@ export const useRequestData = (url) => {
     axios
       .get(url)
       .then( (response) => {
-        console.log(response)
         setIsloading(false)
         setListTripData(response.data)
       })
