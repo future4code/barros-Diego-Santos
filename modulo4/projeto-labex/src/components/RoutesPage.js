@@ -6,7 +6,7 @@ import { ListTripPage } from "./pages/listTripComponents/ListTripsPage";
 import { LoginPage } from "./pages/LoginPage"
 import { ApplicationFormPage } from "./pages/appliFormPageComponents/ApplicationFormPage"
 import { AdminHomePage } from "./pages/AdminHomePage";
-import { CreateTripePage } from "./pages/CreateTripePage";
+import { CreateTripePage } from "./pages/creatTripPageComponents/CreateTripePage";
 import { TripDetailsPage } from "./pages/TripDetailsPage";
 
 export const RoutesPage = () => {
