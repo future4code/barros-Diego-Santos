@@ -1,14 +1,15 @@
 import React, {useState} from "react";
 import { useNavigate } from "react-router-dom";
-import { ContainerCreatTripPage, FormCreatTrip, TitleCreatTrip,
-  DivInput, TitleInput, InputCreatTrip, BtnCreatTrip,
-  DivSelect,Select,Options } from "./styleCreatTripPage";
-import axios from "axios";
+import * as style from "./styleCreatTripPage";
 
+import axios from "axios";
+import * as MyConst from "../../constants/constants";
 import { useSubmitDataForm } from "../../hoks/useSubmitDataForm";
-import { url,listPlanet } from "../../constants";
+import { useProtectedPage } from "../../hoks/useProtectedPage";
+
 
 export const CreateTripePage = () => {
+  useProtectedPage()
   const navigate = useNavigate()
   const [bodyData, onChange , clear] = useSubmitDataForm({
     "name": "",
@@ -24,67 +25,74 @@ export const CreateTripePage = () => {
     }
   }
 
+  const reverseString = (string) => {
+    string.reverseString()
+    console.log(string)
+  }
   const submitNewTrip = (event) => {
     event.preventDefault();
-    axios
-      .post(`${url}trips/`,bodyData,header)
-      .then( (response) => {
-      console.log("viagem criada")
-      })
-      .catch( (error) => {
-      console.log("erro ao tentar criar viagem",error.response.config)
-    })
-    clear()
-  }
+    // axios
+    //   .post(`${MyConst.url}trips/`,bodyData,header)
+    //   .then( (response) => {
+    //   console.log("viagem criada")
+    //   })
+    //   .catch( (error) => {
+    //   console.log("erro ao tentar criar viagem",error.response.config)
+    // })
+    // clear()
 
+    console.log(bodyData)
+  }
+  
   
   return (
-    <ContainerCreatTripPage>
-      <button onClick={() => navigate(-1)}>Voltar</button>
-      <TitleCreatTrip>criar viagem</TitleCreatTrip>
-      <FormCreatTrip onSubmit={submitNewTrip} >
-        <DivInput>
-          <TitleInput htmlFor="name">Nome da viagem</TitleInput>
-          <InputCreatTrip
+    <style.ContainerCreatTripPage>
+      <button onClick={() => navigate("/admin/trip/list")}>Voltar</button>
+      <style.TitleCreatTrip>criar viagem</style.TitleCreatTrip>
+      <style.FormCreatTrip onSubmit={submitNewTrip} >
+        <style.DivInput>
+          <style.TitleInput htmlFor="name">Nome da viagem</style.TitleInput>
+          <style.InputCreatTrip
             required
             id="name"
             name="name"
             type="text"
             minLength="5"
+            x-moz-errormessage="digite pelo menos letras"
             value={bodyData.name}
             onChange={onChange}
           />
-        </DivInput>
+        </style.DivInput>
 
-        <DivSelect>
-          <TitleInput htmlFor="planet">Planetas</TitleInput>
-          <Select required name="planet" id="planet" value={bodyData.planet} onChange={onChange}>
-            <Options value="">Escolha um Planeta</Options>
-            {listPlanet.map( (planet,index) => {
+        <style.DivSelect>
+          <style.TitleInput htmlFor="planet">Planetas</style.TitleInput>
+          <style.Select required name="planet" id="planet" value={bodyData.planet} onChange={onChange}>
+            <style.Options value="">Escolha um Planeta</style.Options>
+            {MyConst.listPlanet.map( (planet,index) => {
               return (
-                <Options key={index} value={planet}>{planet}</Options>
+                <style.Options key={index} value={planet}>{planet}</style.Options>
               )
             })}
-          </Select>
-        </DivSelect>
+          </style.Select>
+        </style.DivSelect>
 
-        <DivInput>
-          <TitleInput htmlFor="date">Data</TitleInput>
-          <InputCreatTrip 
+        <style.DivInput>
+          <style.TitleInput htmlFor="date">Data</style.TitleInput>
+          <style.InputCreatTrip 
             required
             id="date"
             name="date"
             type="date"
-            min="2023-01-01"
-            //  min={() => { date.toLocaleDateString()}} // vou deixar pra fazer isso depois
+            min="2023/01/01"   
+            maxLength="10"       
             value={bodyData.date}
             onChange={onChange}
           />
-        </DivInput>
+        </style.DivInput>
 
-        <DivInput>
-          <TitleInput htmlFor="description">Descrição</TitleInput>
-          <InputCreatTrip 
+        <style.DivInput>
+          <style.TitleInput htmlFor="description">Descrição</style.TitleInput>
+          <style.InputCreatTrip 
             required
             id="description"
             name="description"
@@ -93,11 +101,11 @@ export const CreateTripePage = () => {
             value={bodyData.description}
             onChange={onChange}
           />
-        </DivInput>
+        </style.DivInput>
 
-        <DivInput>
-          <TitleInput htmlFor="durationInDays">Duração da viagem</TitleInput>
-          <InputCreatTrip 
+        <style.DivInput>
+          <style.TitleInput htmlFor="durationInDays">Duração da viagem</style.TitleInput>
+          <style.InputCreatTrip 
             required
             id="durationInDays"
             name="durationInDays"
@@ -106,10 +114,10 @@ export const CreateTripePage = () => {
             value={bodyData.durationInDays}
             onChange={onChange}
           />
-        </DivInput>
-        <BtnCreatTrip>Criar Viagem</BtnCreatTrip>
-      </FormCreatTrip>
-    </ContainerCreatTripPage>
+        </style.DivInput>
+        <style.BtnCreatTrip>Criar Viagem</style.BtnCreatTrip>
+      </style.FormCreatTrip>
+    </style.ContainerCreatTripPage>
   )
 }
 

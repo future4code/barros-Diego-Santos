@@ -1,5 +1,5 @@
-export  const url = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/diego-riosS-barros/";
 
+export  const url = "https://us-central1-labenu-apis.cloudfunctions.net/labeX/diego-riosS-barros/";
 
 export const  listCountry = [
     "Canada",
@@ -27,5 +27,4 @@ export const listPlanet = [
     "Saturno",
     "Urano",
     "Netuno",
-    ""
-]
+];

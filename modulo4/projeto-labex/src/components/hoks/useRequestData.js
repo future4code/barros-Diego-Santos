@@ -3,7 +3,7 @@ import React, {useState, useEffect} from "react";
 
 
 
-export const useRequestData = (url) => {
+export const useRequestData = (url,headers) => {
 
   const [ listTripData ,setListTripData ] = useState([])
   const [ isloading , setIsloading] = useState(false)
@@ -12,7 +12,7 @@ export const useRequestData = (url) => {
   useEffect( () => {
     setIsloading(true)
     axios
-      .get(url)
+      .get(url,headers)
       .then( (response) => {
         setIsloading(false)
         setListTripData(response.data)
@@ -22,7 +22,7 @@ export const useRequestData = (url) => {
         setListTripDataError(error)
       })
 
-  },[])
+  },[url])
 
   return [ listTripData, isloading, listTripDataError]
 }

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { DivButtons, DivContainerTrips, DivListTrip, ListInfo, Span, Title } from "./styleTrips";
 
 import { useRequestData } from "../../hoks/useRequestData";
-import { url } from "../../constants";
+import { url } from "../../constants/constants";
 
 export const ListTripPage = () => {
   const navigate = useNavigate()
