@@ -6,7 +6,7 @@ import React, {useState, useEffect} from "react";
 export const useRequestData = (url,headers) => {
 
   const [ listTripData ,setListTripData ] = useState([])
-  const [ isloading , setIsloading] = useState(false)
+  const [ isloading , setIsloading] = useState(true)
   const [ listTripDataError, setListTripDataError] = useState([])
 
   useEffect( () => {
