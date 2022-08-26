@@ -4,7 +4,8 @@ import * as MyConst from "../../constants/constants"
 import { useNavigate } from "react-router-dom";
 import { useRequestData } from "../../hoks/useRequestData";
 import { useProtectedPage } from "../../hoks/useProtectedPage";
-import trash from "../../images/lixo.png"
+// import trash from "../../images/lixo.png"
+import {BiTrash} from "react-icons/bi"
 import axios from "axios";
 
 export const AdminHomePage = () => {
@@ -45,7 +46,7 @@ export const AdminHomePage = () => {
           <style.ListInfo> {trip.name} </style.ListInfo>  
         </style.DivTrip>
         <style.DivBtnDel onClick={ ()=> deleteTrip(trip.name,trip.id)}>
-          <img src={trash} />
+          <style.BtnAdmin> <BiTrash/></style.BtnAdmin>
         </style.DivBtnDel>
       </style.DivRenderTrip>
     )
@@ -53,9 +54,9 @@ export const AdminHomePage = () => {
 
   return(
     <style.ContainerAdmHome>  
-      <style.DivButtons>
-        <button onClick={ logout }>logout</button>
-        <button onClick={ () => navigate("/admin/trips/create")}>Criar novas viagens</button> 
+      <style.DivButtons className="DivbuttonTop">
+        <style.BtnAdmin onClick={ logout }>logout</style.BtnAdmin >
+        <style.BtnAdmin  onClick={ () => navigate("/admin/trips/create")}>Criar novas viagens</style.BtnAdmin > 
       </style.DivButtons>
       {/* <button onClick={ () => navigate("/trip")} */}
       <style.Title>Lista de Viagens</style.Title>

@@ -11,6 +11,7 @@ import { useProtectedPage } from "../../hoks/useProtectedPage";
 export const CreateTripePage = () => {
   useProtectedPage()
   const navigate = useNavigate()
+  const [header, setHeader ] = useState( {headers: {auth: localStorage.getItem("token")}});
   const [bodyData, onChange , clear] = useSubmitDataForm({
     "name": "",
     "planet": "",
@@ -18,30 +19,24 @@ export const CreateTripePage = () => {
     "description": "",
     "durationInDays": ""
   })  
-
-  const header = {
-    headers: {
-      auth : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImxCS3hxVzJGWTdnZ253NFJsZjN4IiwiZW1haWwiOiJhc3Ryb2RldkBnbWFpbC5jb20uYnIiLCJpYXQiOjE2NjAxODIxOTd9.I9ugSbdIHp2RCTlxF_KvJmImcFFzDmWo6JcjEJSRexw"
-    }
-  }
-
-  const reverseString = (string) => {
-    string.reverseString()
-    console.log(string)
-  }
+  
+  
   const submitNewTrip = (event) => {
     event.preventDefault();
-    // axios
-    //   .post(`${MyConst.url}trips/`,bodyData,header)
-    //   .then( (response) => {
-    //   console.log("viagem criada")
-    //   })
-    //   .catch( (error) => {
-    //   console.log("erro ao tentar criar viagem",error.response.config)
-    // })
-    // clear()
+    // ---- essas duas variaveis abaixo mudam o formato da data //
+    let date = new Date(bodyData.date )
+    let dateMDY = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+    axios
+      .post(`${MyConst.url}trips/`,{...bodyData,date: dateMDY},header)
+      .then( (response) => {
+      console.log("viagem criada")
+      })
+      .catch( (error) => {
+      console.log("erro ao tentar criar viagem",error.response.config)
+    })
+    clear()
 
-    console.log(bodyData)
+    console.log({...bodyData,date: dateMDY})
   }
   
   
@@ -58,7 +53,6 @@ export const CreateTripePage = () => {
             name="name"
             type="text"
             minLength="5"
-            x-moz-errormessage="digite pelo menos letras"
             value={bodyData.name}
             onChange={onChange}
           />
@@ -83,7 +77,8 @@ export const CreateTripePage = () => {
             id="date"
             name="date"
             type="date"
-            min="2023/01/01"   
+            placeholder="ex:01/01/2000"
+          
             maxLength="10"       
             value={bodyData.date}
             onChange={onChange}
