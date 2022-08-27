@@ -9,7 +9,7 @@ export const LoginPage = () => {
   const navigate = useNavigate()
   const [dataLogin, onChange, clear ] = useSubmitDataForm( { email: "", password: ""})
   
-
+  //////---------------------------//////////
   const login = (event) => {
     event.preventDefault()
     axios
@@ -19,17 +19,18 @@ export const LoginPage = () => {
         navigate("/admin/trip/list")
       })
       .catch( (error) => {
-        console.log(error)
+        alert("email ou senha invalido, tente novamente")
       })
   }
-
+  ///----------// ------- ///// ---------/////
   return(
-    <style.ContainerLoginPage>
-      <style.TitleLogin>Area de login</style.TitleLogin>
-      <button onClick={ () => navigate("/")}>voltar</button>
+  <style.ContainerLoginPage>
+    <style.DivCentralLogin>
+      <style.Button className="btnToBack" onClick={ () => navigate("/")}>voltar</style.Button>
+      <style.TitleLogin>Bem-vindo!</style.TitleLogin>
       <style.FormLogin onSubmit={ login }>
         <style.DivInput>
-          <style.TitleInput htmlFor="email">Email</style.TitleInput>
+          <style.TitleInput htmlFor="email">Email:</style.TitleInput>
           <style.InputLogin
             required
             id="email"
@@ -38,12 +39,11 @@ export const LoginPage = () => {
             value={dataLogin.email}
             onChange={ onChange }
             pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
-
           />
         </style.DivInput>
 
         <style.DivInput>
-          <style.TitleInput htmlFor="password">Senha</style.TitleInput>
+          <style.TitleInput htmlFor="password">Senha:</style.TitleInput>
           <style.InputLogin
             required
             id="password"
@@ -53,10 +53,10 @@ export const LoginPage = () => {
             onChange={ onChange }
           />
         </style.DivInput>
-
-        <style.BtnLogin>Login</style.BtnLogin>
+      <style.DivButton>
+        <style.Button>Login</style.Button>
+      </style.DivButton>
       </style.FormLogin>
-    </style.ContainerLoginPage>
-        
-  )
-}
+    </style.DivCentralLogin>
+  </style.ContainerLoginPage>
+)}

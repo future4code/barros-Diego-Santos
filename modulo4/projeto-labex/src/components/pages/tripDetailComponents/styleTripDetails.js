@@ -71,8 +71,6 @@ export const ContainerTripDetails = styled.div `
     .divCentralDetail {
         max-width: 100vw;
         min-width: 280px;
-
-
         .btnToBack {
             margin: 5px 0 0 5px;
             padding: 10px 20px;
@@ -80,12 +78,11 @@ export const ContainerTripDetails = styled.div `
             border-radius: 10px;
             background-color: #303b45;
             color: #f3f3f3;
-            
             :hover {
                 color: orange;
                 box-shadow: -1px 2px 3px orange;
             }
-        }
+        }/////
         .containerPerson {
             display: flex;
             justify-content: space-evenly;
@@ -140,7 +137,7 @@ export const ContainerTripDetails = styled.div `
                                 box-shadow: 1px 1px 2px #fff;
                             }
                         }
-                    }
+                    }//////
                 }
             }//////////////////
             .divPerson {

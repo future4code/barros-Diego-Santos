@@ -14,6 +14,9 @@ export const DivBtnDel = styled.div `
     padding: 3px;
     margin-left: 10px;
     border-radius: 20px;
+    @media (max-width: 600px){
+        margin: 0;
+    }
     ${BtnAdmin} {
         border: none;
         background-color: transparent;
@@ -79,7 +82,11 @@ export const Title = styled.h1 `
     color: #fff;
     text-shadow: 1px 2px 3px #000;
 `
-
+export const DivCentral = styled.div `
+    @media (max-width: 400px) {
+        max-width: 390px;
+    }
+`
 export const ContainerAdmHome = styled.div `
     min-width: 100%;
     min-height: 100vh;

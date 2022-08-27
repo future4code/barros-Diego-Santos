@@ -60,8 +60,8 @@ export const AdminHomePage = () => {
       </style.DivButtons>
       {/* <button onClick={ () => navigate("/trip")} */}
       <style.Title>Lista de Viagens</style.Title>
-      { dataTripIsLoading && <h1>"...Carregando!!!"</h1> }
-      {!dataTripIsLoading && dataTrip && renderListTrip }
+      { dataTripIsLoading && <style.Title>"...Carregando!!!"</style.Title> }
+      {!dataTripIsLoading && dataTrip && <style.DivCentral> {renderListTrip} </style.DivCentral>}
       {!dataTripIsLoading && !dataTrip && erroDataTrip}
     </style.ContainerAdmHome>
     )

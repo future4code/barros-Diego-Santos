@@ -20,30 +20,29 @@ export const CreateTripePage = () => {
     "durationInDays": ""
   })  
   
-  
+  // --------------------------------------------//
   const submitNewTrip = (event) => {
     event.preventDefault();
     // ---- essas duas variaveis abaixo mudam o formato da data //
     let date = new Date(bodyData.date )
-    let dateMDY = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
+    let dateMDY = `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
     axios
       .post(`${MyConst.url}trips/`,{...bodyData,date: dateMDY},header)
       .then( (response) => {
-      console.log("viagem criada")
+        alert(`A viagem para o planeta ${bodyData.planet} criada`)
       })
       .catch( (error) => {
-      console.log("erro ao tentar criar viagem",error.response.config)
+        alert("erro ao tentar criar viagem")
     })
     clear()
-
-    console.log({...bodyData,date: dateMDY})
   }
-  
+  ////////////////////////////////////////////////////////////////
   
   return (
-    <style.ContainerCreatTripPage>
-      <button onClick={() => navigate("/admin/trip/list")}>Voltar</button>
-      <style.TitleCreatTrip>criar viagem</style.TitleCreatTrip>
+  <style.ContainerCreatTripPage>
+    <style.DivCentral>
+      <style.Button className="btnToBack" onClick={() => navigate("/admin/trip/list")}>Voltar</style.Button>
+      <style.TitleCreatTrip>Criar viagem</style.TitleCreatTrip>
       <style.FormCreatTrip onSubmit={submitNewTrip} >
         <style.DivInput>
           <style.TitleInput htmlFor="name">Nome da viagem</style.TitleInput>
@@ -78,7 +77,7 @@ export const CreateTripePage = () => {
             name="date"
             type="date"
             placeholder="ex:01/01/2000"
-          
+            min="2023/01/01" //nao funciona
             maxLength="10"       
             value={bodyData.date}
             onChange={onChange}
@@ -110,17 +109,11 @@ export const CreateTripePage = () => {
             onChange={onChange}
           />
         </style.DivInput>
-        <style.BtnCreatTrip>Criar Viagem</style.BtnCreatTrip>
+        <style.DivButton>
+          <style.Button>Criar Viagem</style.Button>
+        </style.DivButton>
       </style.FormCreatTrip>
-    </style.ContainerCreatTripPage>
+    </style.DivCentral>  
+  </style.ContainerCreatTripPage>
   )
 }
-
-
-// isso abaixo era um teste 
-// const takeDate = new Date();
-//   const date = takeDate.toLocaleDateString()
-//   const teste = (d) => {
-//     return d.split("").reverse().join("");
-//   }
-//   console.log(teste(date))
