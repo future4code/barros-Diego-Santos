@@ -38,7 +38,7 @@ export const LoginPage = () => {
             type="email"
             value={dataLogin.email}
             onChange={ onChange }
-            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            pattern="[a-z0-9A-Z._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
           />
         </style.DivInput>
 

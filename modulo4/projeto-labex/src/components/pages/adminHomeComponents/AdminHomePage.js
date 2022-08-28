@@ -4,7 +4,6 @@ import * as MyConst from "../../constants/constants"
 import { useNavigate } from "react-router-dom";
 import { useRequestData } from "../../hoks/useRequestData";
 import { useProtectedPage } from "../../hoks/useProtectedPage";
-// import trash from "../../images/lixo.png"
 import {BiTrash} from "react-icons/bi"
 import axios from "axios";
 
@@ -26,7 +25,7 @@ export const AdminHomePage = () => {
   // ----------------------------------------------------------------------//
 
   // abaixo o botao de deletar ....
-  const [header, setHeader ] = useState( {headers: {auth: localStorage.getItem("token")}});
+  const [header, setHeader ] = useState( {headers: {auth: sessionStorage.getItem("token")}});
   const deleteTrip = (tripName,tripId) => {
     axios
     .delete(`${MyConst.url}trips/${tripId}`,header)

@@ -50,8 +50,9 @@ export const ApplicationFormPage = () => {
   
   
   return (
-    <style.ContainerAppliFormPage>
-      <button onClick={ () => navigate("/trip/list")}>Voltar</button>
+  <style.ContainerAppliFormPage>
+    <style.DivCentral>
+      <style.Button className="btnToBack" onClick={ () => navigate("/trip/list")}>Voltar</style.Button>
       <style.TitleAppliForm>Inscreva-se para uma viagem</style.TitleAppliForm>
 
       <style.FormAppli onSubmit={submitFormTripAppli}>
@@ -83,12 +84,11 @@ export const ApplicationFormPage = () => {
             name="age"
             type="number"
             min="18"
-            oninvalid="setCustomValidity('Apenas números! ')"
             value={formTrip.age}
             onChange={ onChange }
           />
+          {formTrip.age > 0 && formTrip.age < 18 && <style.Warning>Somente para maiores de 18 anos</style.Warning>}
         </style.DivInput>
-
         <style.DivInput>
           <style.TitleInput htmlFor="applicationText">Razão da viagem</style.TitleInput>
           <style.InputAppli
@@ -109,6 +109,7 @@ export const ApplicationFormPage = () => {
             id="profession"
             name="profession"
             type="text"
+            minLength="10"  
             value={formTrip.profession}
             onChange={ onChange }
           />
@@ -120,9 +121,11 @@ export const ApplicationFormPage = () => {
             {nameCountry}
           </style.Select>
         </style.DivSelect>
-        <style.BtnAppliForm  type="submit">Enviar</style.BtnAppliForm> 
+        <style.DivButton>
+          <style.Button  type="submit">Enviar</style.Button> 
+        </style.DivButton>
       </style.FormAppli>
-      
-    </style.ContainerAppliFormPage>
+    </style.DivCentral>    
+  </style.ContainerAppliFormPage>
   )
 }

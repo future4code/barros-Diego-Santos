@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import background from '../../images/marte.jpg'
+import background from '../../images/wallpaper_0000310368.jpg'
 
 export const Button = styled.button `
     cursor: pointer;
@@ -34,8 +34,10 @@ export const FormLogin = styled.form `
     margin: 50px 0;
     ${Button}{
         width: 200px;
+        padding: 5px 10px;
         font-size: 22px;
-        background-color: #000;
+        font-weight: bold;
+        background-color: #4444;
         color: #fff;
         :hover{
             box-shadow: 1px 2px 3px #9af1b5;
@@ -67,7 +69,7 @@ export const DivCentralLogin = styled.div `
         font-size: 20px;
         padding: 10px 20px;
         border-radius: 10px;
-        border: none;
+        border: 1px solid #000;
         background-color: #000;
         color: #fff;
         :hover{
@@ -91,4 +93,7 @@ export const ContainerLoginPage = styled.div `
     display: flex;
     align-items: center;
     background-image: url( ${background});
+    @media (max-width: 600px) {
+        background-size: contain;
+    }
 `

@@ -7,6 +7,12 @@ export const Button = styled.button `
     cursor: pointer;
     padding: 5px 10px;
     font-size: 20px;
+    border-radius: 5px;
+    margin: 0 10px;
+    :hover{
+        box-shadow: 0px 2px 3px gray;
+        border: 1px solid #000;
+    }
 `
 
 export const DivButtons = styled.div `
@@ -33,7 +39,7 @@ export const DivListTrip = styled.div `
     margin: 10px 0;
     box-sizing: border-box;
     width: 450px;
-    box-shadow: 1px 2px 2px #000;
+    box-shadow: 1px 2px 5px #000;
     list-style: none;
     line-height: 1.7;
     font-size: 18px;
@@ -55,7 +61,7 @@ export const DivCentral = styled.div `
         padding: 0;
         width: 100%;
         ${DivListTrip}{
-            width: 340px;
+            width: 330px;
         }
     }
 `
