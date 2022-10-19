@@ -2,7 +2,12 @@
 
 // a) Quais são as entradas e saídas dessa função? Copie a função para um arquivo
 //.ts e faça a tipagem desses parâmetro
-function obterEstatisticas(numeros: number[]): {} {
+type objetos = {
+  maior: number ,
+  menor: number ,
+  media: number
+}
+function obterEstatisticas(numeros: number[]): objetos {
   const numerosOrdenados: number[] = numeros.sort(
     (a, b) => a - b
   ) ;
@@ -13,7 +18,7 @@ function obterEstatisticas(numeros: number[]): {} {
     soma += num
   } ;
 
-  const estatisticas: {} = {
+  const estatisticas: objetos = {
     maior: numerosOrdenados[numeros.length - 1],
     menor: numerosOrdenados[0],
     media: soma / numeros.length
@@ -32,7 +37,13 @@ console.log(obterEstatisticas([10,15,5,20,2,3,6,9]));
 //numeros e obterEstatisticas. Abaixo, temos um exemplo de objeto desse tipo, 
 //declarado em JavaScript:
 type  DataSample = {
-  numeros: [21, 18, 65, 44, 15, 18],
-  obterEstisticas: (numeros: number[]) => {}
+  numeros: number[],
+  obterEstisticas: (numeros: number[]) => objetos
 } ;
+
+const sample: DataSample = {
+  numeros: [10,15,24,55,14,13,2,7],
+  obterEstisticas: obterEstatisticas,
+} ;
+console.log(sample.obterEstisticas(sample.numeros))
 
