@@ -17,7 +17,7 @@ app.get("/ping", (req:Request, res:Response):void => {
 // ------- // ------------------ // ------------------- //
 
 // Exercicio 2 //
-type ToDos = {
+type Task = {
   "userId": number,
   "id": number,
   "title": string,
@@ -27,79 +27,150 @@ type ToDos = {
 
 // Exercicio 3 //
 
-const toDoList: ToDos[] = [
+const taskList: Task[] = [
   { "userId": 1,
     "title": "Fazer compras",
-    "id": Date.now(),
+    "id": 1,
     "completed": false
   },
   { "userId": 2,
     "title": "Lavar roupas",
-    "id": Date.now(),
+    "id": 2,
     "completed": true
   },
-  { "userId": 3,
+  { "userId": 1,
     "title": "Passear com o cachorro",
-    "id": Date.now(),
+    "id": 3,
     "completed": false
   },
-  { "userId": 4,
+  { "userId": 2,
     "title": "Estudar",
-    "id": Date.now(),
+    "id": 4,
     "completed": false
   },
-  { "userId": 5,
+  { "userId": 1,
     "title": "Jogar",
-    "id": Date.now(),
+    "id": 5,
     "completed": true
   },
-  { "userId": 6,
+  { "userId": 1,
     "title": "Visitar a familia",
-    "id": Date.now(),
+    "id": 6,
     "completed": false
   },
 ];
 // ------- // ------------------ // ------------------- //
 
 // Exercicio 4 //
-app.get("/toDoList/:completed", (req:Request, res:Response) => {
-  const taskCompleted = req.params.completed;
-  const completed:ToDos[] = toDoList.filter( (task) => {
+app.get("/taskList/verify/:completed", (req:Request, res:Response) => {
+  const taskCompleted = req.params.completed.toLowerCase();
+  const completed:Task[] = taskList.filter( (task: Task) => {
     return task.completed.toString() === taskCompleted.toString()
   });
-  // if(taskCompleted === "true") {
-  //   return  res.status(200).send(completed)
-  // }
   res.status(200).send(completed)
 });
 
 // ------- // ------------------ // ------------------- //
 
 // Exercicio 5 //
-app.post("/newTask", (req:Request, res:Response) => {
-  const { userId , id, title, completed } = req.body;
-  if(!userId  || !id ){
-    return res.status(400).send("Por favor Digite um numero no id e no userId")
+// nao precisa passar o id na hora de usar no postman //
+app.post("/addNewTask", (req:Request, res:Response) => {
+  const { userId, title, completed } = req.body;
+  if(!userId){
+    return res.status(400).send("Por favor Digite um numero no  userId")
   } else if(!title){
     return res.status(400).send("Por favor coloque o title")
-  } else if(!completed){
+  } else if(typeof completed === "string"){
     return res.status(400).send("Por favor digite o completed com um boleano no completed ex: true ou false")
   }
 
-  const newTask:ToDos = {
+  const newTask:Task = {
     userId: Number(userId),
-    id: Number(id),
+    id: taskList.length + 1,
     title: title,
     completed: completed
   };
-  toDoList.push(newTask)
-  res.status(200).send(toDoList)
+  taskList.push(newTask);
+  res.status(200).send(taskList);
 });
 // ------- // ------------------ // ------------------- //
 
 // Exercicio 6 //
+app.put("/taskList/:changeCompleted", (req:Request, res:Response) => {
+  const taskId = req.headers.authorization;
+  const  completed  = req.params.changeCompleted;
+ 
+  const searchTask:Task | undefined = taskList.find( (task:Task) => {
+    return task.id === Number(taskId)  
+  });
+  if(!searchTask) {
+    return res.status(401).send("Id inexistente, por favor digite um id valido!")
+  };
 
+  if(completed === "false") {
+    taskList.map( (task) => {
+      if(task.id === Number(taskId)){
+        task.completed = false
+      }
+    })
+  } else if( completed === "true") {
+    taskList.map( (task) => {
+      if(task.id === Number(taskId)){
+        task.completed = true
+      }
+    });
+  } else {
+    return res.status(401).send("Por favor Digite um booleano true ou false no params completed")
+  };
 
+  res.status(200).send(taskList)
+});
+// ------- // ------------------ // ------------------- //
+
+// Exercicio 7 //
+app.delete("/taskList/delete/:taskId",(req:Request, res:Response) => {
+  const taskId = req.params.taskId;
+
+  const searchTask:Task | undefined = taskList.find( (task:Task) => {
+    return task.id === Number(taskId)  
+  });
+  if(!searchTask) {
+    return res.status(401).send("Id inexistente, por favor digite um id valido!")
+  };
+
+  let index: number;
+  const removeTask = ():void => {
+    taskList.map( (task,i) => { //nao sei usar o indexOf direito entao fiz com o map //
+      if(task.id === Number(taskId)){
+        return index = i;
+      }
+    })
+    taskList.splice(index,1)
+  };
+  removeTask()
+  res.status(200).send(taskList)
+});
+// ------- // ------------------ // ------------------- //
+
+// Exercicio 8 //
+app.get("/taskList/:userId",(req:Request, res:Response) => {
+  const userId = req.params.userId;
+  const searchUser:Task | undefined = taskList.find( (user:Task) => {
+    return user.userId === Number(userId)  
+  });
+  if(!searchUser) {
+    return res.status(401).send("Id inexistente, por favor digite um id valido!")
+  };
+  const userTasks:Task[] = taskList.filter( (task: Task) => {
+    return task.userId === Number(userId)
+  }) 
+  res.status(200).send(userTasks);
+})
+// ------- // ------------------ // ------------------- //
+
+// Exercicio 9 // 
+ // Criar uma documentaçao do postman
+  // link da documentação https://documenter.getpostman.com/view/22376175/2s8YRdsFqD // 
 // ------- // ------------------ // ------------------- //
 app.listen(3003, () => {
   console.log("Server is running in http://localhost:3003");
