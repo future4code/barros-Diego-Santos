@@ -1,0 +1,13 @@
+
+GET https://viacep.com.br/ws/44695000/json/
+content-Type: "application/json"
+
+###
+POST http://localhost:3003/addEndereco
+Content-Type: application/json
+
+{
+  "cep": "44695000",
+  "numeroCasa": "62",
+  "complemento": "Plantas em frente a casa"
+}
