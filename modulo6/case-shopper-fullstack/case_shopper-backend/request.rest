@@ -1,0 +1,58 @@
+// teste de conexao
+GET http://localhost:3003/ping
+// ----------- // ---------- //
+
+###
+// Buscar clientes
+GET http://localhost:3003/clients
+Content-Type: application/json
+
+// ----------- // ---------- //
+###
+// Buscar produtos
+GET http://localhost:3003/products 
+Content-Type: application/json
+
+// ----------- // ---------- //
+
+###
+// Ver estoque e nome dos Produtos
+GET http://localhost:3003/stock
+Content-Type: application/json
+
+// ----------- // ---------- //
+
+###
+// Fazer um pedido
+POST http://localhost:3003/order 
+Content-Type: application/json
+
+{
+  "fk_Client": 1,
+  "delivey_Date": "2023-01-05",
+  "products": [
+    {
+      "id": 11,
+      "qty": 10
+    },
+    {
+      "id": 7,
+      "qty": 5
+    },
+    {
+      "id": 9,
+      "qty": 14
+    }
+  ]
+}
+// ----------- // ---------- //
+
+###
+// Criar cliente
+POST http://localhost:3003/client
+Content-Type: application/json
+
+{
+  "name": "Junior"
+}
+// ----------- // ---------- //
