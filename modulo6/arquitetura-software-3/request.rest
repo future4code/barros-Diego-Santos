@@ -1,0 +1,25 @@
+GET  http://localhost:3003/user/all
+Content-Type: application/json
+
+###
+POST http://localhost:3003/user/create
+Content-Type: application/json
+
+{
+    "name": "teste6",
+    "email": "email@email6.com",
+    "password": "234325354"
+}
+###
+GET http://localhost:3003/movie/all
+Content-Type: application/json
+###
+POST http://localhost:3003/movie/create
+Content-Type: application/json
+
+{
+    "title":"A volta dos que não foram",
+    "description":"Uma inscrivel viagem pra um lugar inexistente, onde os que não foram, conseguiram chegar",
+    "duration_in_minutes":120,
+    "year_of_release": "1999"
+}
