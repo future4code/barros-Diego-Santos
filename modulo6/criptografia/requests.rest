@@ -1,0 +1,29 @@
+
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "feijao", 
+   "nickname": "carioca", 
+   "email": "feiajosemsal@.com" ,
+   "password": "comketchup"
+}
+###
+
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "feiajosemsal@.com",
+   "password": "comketchup"
+}
+
+###
+PUT http://localhost:3003/user/edit/20bd6989-35f6-46a0-9ee5-caddc4e1b4c0
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImFhYzE4OTM0LTM3ZGYtNDk0NC04NTlkLTU1OTljNjc1YjJmMCIsImlhdCI6MTY3NTM3NTA0NSwiZXhwIjoxNjc1Mzc4NjQ1fQ.pjycwkaUmhVTVUCCU25DRHL0Qbp4dJhFxdHgic0OlSw
+
+{
+   "name": "feijao",
+   "nickname": "preto" 
+}
