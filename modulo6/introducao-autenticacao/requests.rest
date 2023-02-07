@@ -1,0 +1,34 @@
+ ### CRIAR CONTA
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+   "name": "Norman", 
+   "nickname": "Green", 
+   "email": "osbourne234@oscorp.com" ,
+   "password": "ihatepeter"
+}
+
+### LOGIN
+POST http://localhost:3003/user/login
+Content-Type: application/json
+
+{
+   "email": "osbourne234@oscorp.com" ,
+   "password": "ihatepeter"
+}
+
+### EDITAR INFROMACOES
+PUT http://localhost:3003/user/edit
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkNmI5YjFjLTVhMjUtNDQ3ZC04ODQyLTBmOGQ3MWFjNGIzZSIsImlhdCI6MTY3NTEyMzc3NiwiZXhwIjoxNjc1MTI3Mzc2fQ.CFHlxwOIZxNp8ywRw54BoZ5DDtpGlRQRvJPiyQm87wU
+Content-Type: application/json
+
+{
+   "name": "Feijao",
+   "nickname": "Tropeiro" 
+}
+
+### PEGAR INFORMACOES
+GET http://localhost:3003/user/profile
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVkNmI5YjFjLTVhMjUtNDQ3ZC04ODQyLTBmOGQ3MWFjNGIzZSIsImlhdCI6MTY3NTIwNjIyNSwiZXhwIjoxNjc1MjA2Mjg1fQ.iX1XIIZVEHrdpAY-DR4nANvslo7p7yl9nfRVcgVPM64
+Content-Type: application/json
